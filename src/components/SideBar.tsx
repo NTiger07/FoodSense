@@ -7,6 +7,9 @@ const navigate = useNavigate()
             <span>SideBar</span>
             <span onClick={() => navigate("/")}>DashBoard</span>
             <span onClick={() => navigate("/inventory")}>Inventory</span>
+            <span onClick={() => navigate("/assistant")}>Assistant</span>
+            <span onClick={() => navigate("/analytics")}>Analytics</span>
+            <span onClick={() => navigate("/education")}>Education</span>
         </div>
     )
 }

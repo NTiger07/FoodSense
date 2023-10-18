@@ -9,14 +9,17 @@ Barcode Scanning: Integration with barcode scanning technology to scan and add i
 Expiration Dates: Users can input expiration dates for perishable items.
 Quantity Tracking: Keep track of quantities for each item.
 
-
-
-
 Smart Recommendations:
 
 Recipe Suggestions: Recommend recipes based on the ingredients users have in their pantry.
 Expiration Alerts: Send notifications when items are close to expiration, suggesting recipes to use them up.
 Shopping List: Create a shopping list based on planned recipes and missing ingredients.
+
+Educational Resources:
+
+Cooking Tips: Offer cooking and food storage tips to extend the life of perishable items.
+Nutritional Information: Provide nutritional information for different food items.
+Food Preservation Techniques: Educate users about food preservation methods like freezing, canning, and pickling.
 
 
 Waste Tracking and Analytics:
@@ -25,11 +28,6 @@ Food Waste Tracker: Provide insights into the quantity and types of food users a
 Environmental Impact: Calculate and display the environmental impact of reducing food waste, such as reduced carbon footprint and water usage.
 
 
-Educational Resources:
-
-Cooking Tips: Offer cooking and food storage tips to extend the life of perishable items.
-Nutritional Information: Provide nutritional information for different food items.
-Food Preservation Techniques: Educate users about food preservation methods like freezing, canning, and pickling.
 
 
 

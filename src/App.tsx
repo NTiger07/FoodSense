@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-rou
 import SideBar from './components/SideBar'
 import MainDashBoard from './components/MainDashBoard'
 import InventoryContainer from './components/InventoryContainer';
+import AssistantContainer from './components/AssistantContainer';
+import EducationContainer from './components/EducationContainer';
+import { AnalyticsContainer } from './components/AnalyticsContainer';
 
 function App() {
 
@@ -15,6 +18,9 @@ function App() {
           <Routes>
             <Route path='/' element={<MainDashBoard />} />
             <Route path='/inventory' element={<InventoryContainer />} />
+            <Route path='/assistant' element={<AssistantContainer />} />
+            <Route path='/analytics' element={<AnalyticsContainer />} />
+            <Route path='/education' element={<EducationContainer />} />
           </Routes>
       </div>
       

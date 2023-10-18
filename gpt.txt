@@ -19,15 +19,6 @@ Expiration Alerts: Send notifications when items are close to expiration, sugges
 Shopping List: Create a shopping list based on planned recipes and missing ingredients.
 
 
-
-Community Features:
-
-Recipe Sharing: Allow users to share their own recipes and cooking tips.
-Food Donation Hub: Enable users to donate excess food to local charities or food banks.
-Community Challenges: Organize challenges encouraging users to create meals from what they have in their pantry, rewarding sustainable practices.
-
-
-
 Waste Tracking and Analytics:
 
 Food Waste Tracker: Provide insights into the quantity and types of food users are wasting over time.
@@ -71,6 +62,11 @@ Food Preservation Techniques: Educate users about food preservation methods like
 
 
 
+Community Features:
+
+Recipe Sharing: Allow users to share their own recipes and cooking tips.
+Food Donation Hub: Enable users to donate excess food to local charities or food banks.
+Community Challenges: Organize challenges encouraging users to create meals from what they have in their pantry, rewarding sustainable practices.
 
 
 User Engagement:

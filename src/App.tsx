@@ -1,7 +1,8 @@
 import './App.css'
-import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-router-dom'; import HeadBoard from './components/HeadBoard'
+import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-router-dom';
 import SideBar from './components/SideBar'
 import MainDashBoard from './components/MainDashBoard'
+import InventoryContainer from './components/InventoryContainer';
 
 function App() {
 
@@ -11,11 +12,10 @@ function App() {
         <SideBar />
       </div>
       <div className='w-[82%] h-[13vh]'>
-        <BrowserRouter>
           <Routes>
             <Route path='/' element={<MainDashBoard />} />
+            <Route path='/inventory' element={<InventoryContainer />} />
           </Routes>
-        </BrowserRouter>
       </div>
       
     </div>

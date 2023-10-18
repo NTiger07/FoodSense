@@ -1,11 +1,11 @@
 import './App.css'
 import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-router-dom';
 import SideBar from './components/SideBar'
-import MainDashBoard from './components/MainDashBoard'
-import InventoryContainer from './components/InventoryContainer';
-import AssistantContainer from './components/AssistantContainer';
-import EducationContainer from './components/EducationContainer';
-import { AnalyticsContainer } from './components/AnalyticsContainer';
+import DashBoard from './pages/dashboard/DashBoard'
+import Inventory from './pages/dashboard/Inventory';
+import Assistant from './pages/dashboard/Assistant';
+import Education from './pages/dashboard/Education';
+import Analytics from './pages/dashboard/Analytics';
 
 function App() {
 
@@ -16,11 +16,11 @@ function App() {
       </div>
       <div className='w-[82%] h-[13vh]'>
           <Routes>
-            <Route path='/' element={<MainDashBoard />} />
-            <Route path='/inventory' element={<InventoryContainer />} />
-            <Route path='/assistant' element={<AssistantContainer />} />
-            <Route path='/analytics' element={<AnalyticsContainer />} />
-            <Route path='/education' element={<EducationContainer />} />
+            <Route path='/' element={<DashBoard />} />
+            <Route path='/inventory' element={<Inventory />} />
+            <Route path='/assistant' element={<Assistant />} />
+            <Route path='/analytics' element={<Analytics />} />
+            <Route path='/education' element={<Education />} />
           </Routes>
       </div>
       

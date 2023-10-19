@@ -1,4 +1,3 @@
-import React from 'react'
 import AssistantContainer from '../../components/AssistantContainer'
 
 const Assistant = () => {

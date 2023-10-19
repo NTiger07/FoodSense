@@ -1,4 +1,3 @@
-import React from 'react'
 import EducationContainer from '../../components/EducationContainer'
 
 const Education = () => {

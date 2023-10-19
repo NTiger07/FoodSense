@@ -1,4 +1,4 @@
-const InventoryItem = (props: MyProps) => {
+const InventoryItem = (props: any) => {
     const { item } = props;
     return (
 

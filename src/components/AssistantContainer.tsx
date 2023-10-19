@@ -1,5 +1,3 @@
-import React from 'react'
-
 const AssistantContainer = () => {
   return (
     <div>AssistantContainer</div>

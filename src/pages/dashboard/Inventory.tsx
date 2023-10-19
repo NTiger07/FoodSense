@@ -1,4 +1,4 @@
-import InventoryContainer from "../../components/InventoryContainer"
+import InventoryContainer from "../../components/Inventory/InventoryContainer"
 
 const Inventory = () => {
   return (

@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 import SideBar from './components/SideBar'
 import DashBoard from './pages/dashboard/DashBoard'
 import Inventory from './pages/dashboard/Inventory';
@@ -14,7 +14,6 @@ function App() {
         <SideBar />
       </div>
       <div className='w-[82%] h-[13vh]'>
-        <Router>
           <Routes>
             <Route path='/' element={<DashBoard />} />
             <Route path='/inventory' element={<Inventory />} />
@@ -22,10 +21,8 @@ function App() {
             <Route path='/analytics' element={<Analytics />} />
             <Route path='/education' element={<Education />} />
           </Routes>
-        </Router>
-
       </div>
-
+      
     </div>
 
 

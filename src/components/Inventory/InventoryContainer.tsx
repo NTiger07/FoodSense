@@ -1,13 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import AddInventoryItem from "./AddInventoryItem"
 import InventoryItem from "./InventoryItem"
 import ExpiryItem from "./ExpiryItem"
 
 const InventoryContainer = () => {
-  const [inventoryList, setInventoryList] = useState([
+  const storedInventoryListJSON = localStorage.getItem("inventoryList");
+  const storedInventoryList = JSON.parse(storedInventoryListJSON)
+
+  
+  const [inventoryList, setInventoryList] = useState(storedInventoryList || [
     { "id": 1, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13/10/24", "notes": "For Sundays" },
     { "id": 2, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13/10/24", "notes": "For Sundays" },
   ])
+
+  
+  // const InventoryListJSON = JSON.stringify(inventoryList)
+  localStorage.setItem("inventoryList", JSON.stringify(inventoryList))
   // const [length, setLength] = useState(1)
   const [addInventory, setAddInventory] = useState(false)
 

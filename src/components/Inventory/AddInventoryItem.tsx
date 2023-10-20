@@ -5,6 +5,8 @@ const AddInventoryItem = (props: any) => {
 
     const addInventory = () => {
         setInventoryList([...inventoryList, {"id": inventoryList.length + 1, "name": name, "quantity": quantity, "expiry_date": expiryDate, "notes": notes}])
+        localStorage.setItem("inventoryList", JSON.stringify(inventoryList))
+
     }
 
     const [name, setName] = useState("")

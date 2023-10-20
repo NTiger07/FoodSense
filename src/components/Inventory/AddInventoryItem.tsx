@@ -1,3 +1,6 @@
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers"
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import dayjs from "dayjs";
 import { useState } from "react"
 
 const AddInventoryItem = (props: any) => {
@@ -52,12 +55,16 @@ const AddInventoryItem = (props: any) => {
                         onChange={(e) => setExpiryDate(e.target.value)}
                         required
                     />
-                    {/* <DatePicker
-                        label="Start Date"
-                        value={startTimeProp}
-                        onChange={handleStartTimeChange}
-                        format="DD-MM-YYYY"
-                    /> */}
+                    {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker
+                            label="Expiry Date"
+                            value={expiryDate}
+                            // onChange={(e) => setExpiryDate(dayjs(e.target.value))}
+                            onChange={(e) => console.log(e.target.value)}
+                            format="DD-MM-YYYY"
+                        />
+                    </LocalizationProvider> */}
+                    
                 </div>
 
             </div>

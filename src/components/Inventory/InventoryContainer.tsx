@@ -86,10 +86,7 @@ const InventoryContainer = () => {
               <div className="relative font-semibold text-[#A05000]" onClick={() => setAddInventory(true)}>Add Item</div>
             </a>
 
-            <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] text-primary-red">
-              <img className="relative w-6 h-6" alt="" src="/assets/save.svg" />
-              <div className="relative font-semibold text-[#A05000]">Save changes</div>
-            </a>
+            
           </div>
         </div>
 

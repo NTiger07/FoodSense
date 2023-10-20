@@ -6,8 +6,8 @@ const SideBar = () => {
     const [isSidebarExpanded, setIsSideBarExpanded] = useState(false)
 
     return (
-        <div className={`relative bg-[#37474F] transition-all h-[100vh] w-[100%] flex flex-col shadow-xl overflow-clip pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`} onMouseOver={() => { setIsSideBarExpanded(true) }} onMouseOut={() => { setIsSideBarExpanded(false) }}>
-            <div className="w-full flex justify-center pb-[12rem] cursor-pointer">
+        <div className={`relative bg-[#37474F] transition-all h-[100vh] w-[100%] flex flex-col shadow-xl overflow-clip pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`}>
+            <div className="w-full flex justify-center mb-[12rem] cursor-pointer" onClick={() => setIsSideBarExpanded(!isSidebarExpanded)}>
                 <img src="/assets/menu-white.svg" className="w-[1.8rem]" alt="" />
             </div>
             <div className="flex flex-col w-full items-center justify-center gap-[3rem]">

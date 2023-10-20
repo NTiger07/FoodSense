@@ -13,7 +13,7 @@ function App() {
       <div className='w-[5%]'>
         <SideBar />
       </div>
-      <div className='w-[95%] h-[100vh] bg-[#263238]'>
+      <div className='w-[95%] h-[100vh] overflow-y-scroll bg-[#263238]'>
           <Routes>
             <Route path='/' element={<DashBoard />} />
             <Route path='/inventory' element={<Inventory />} />

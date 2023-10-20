@@ -9,11 +9,11 @@ import Analytics from './pages/dashboard/Analytics';
 
 function App() {
   return (
-    <div className='w-[100vw] flex'>
-      <div className='w-[18%]'>
+    <div className='w-[100vw] flex text-[#fff]'>
+      <div className='w-[5%]'>
         <SideBar />
       </div>
-      <div className='w-[82%] h-[13vh]'>
+      <div className='w-[95%] h-[100vh] bg-[#263238]'>
           <Routes>
             <Route path='/' element={<DashBoard />} />
             <Route path='/inventory' element={<Inventory />} />

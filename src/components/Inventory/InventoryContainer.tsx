@@ -8,7 +8,7 @@ const InventoryContainer = () => {
     { "id": 1, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13/10/24", "notes": "For Sundays" },
     { "id": 2, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13/10/24", "notes": "For Sundays" },
   ])
-  const [length, setLength] = useState(1)
+  // const [length, setLength] = useState(1)
   const [addInventory, setAddInventory] = useState(false)
 
   const addItem = () => {

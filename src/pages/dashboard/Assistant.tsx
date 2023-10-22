@@ -1,4 +1,4 @@
-import AssistantContainer from '../../components/AssistantContainer'
+import AssistantContainer from "../../components/Assistant/AssistantContainer"
 
 const Assistant = () => {
   return (

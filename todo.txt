@@ -1,6 +1,4 @@
-Implement toastify for saveQuantity changes and for deleteing an item (ask if it was wasted maybe??)
+Implement toastify for saveQuantity changes 
+for deleteing an item (ask if it was wasted maybe??)
 change x to bin icon
-Change inout to MUI datetime
-make Itemdelete show immediately (useEffect or somn)
-style Addinventory
-make addInventoryitem empty and dissapear when add is clicked
+Change input to MUI datetime

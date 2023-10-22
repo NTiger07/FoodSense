@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 const InventoryItem = (props: any) => {
-    const { item } = props
+    const { item, setInventoryList } = props
 
     const setBackdropStyle = useMemo(() => {
         if (item[1].id % 2 == 0) {  // even number
@@ -30,8 +30,7 @@ const InventoryItem = (props: any) => {
             localStorage.setItem("inventoryList", JSON.stringify(storedInventoryList));
         }
 
-        // Optional: You can also update the local state to re-render the component without the removed item
-        // setInventoryList(storedInventoryList);
+        setInventoryList(storedInventoryList);
     };
 
     return (

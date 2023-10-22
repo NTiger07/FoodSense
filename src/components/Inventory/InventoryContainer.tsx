@@ -15,12 +15,12 @@ const InventoryContainer = () => {
 
   
   localStorage.setItem("inventoryList", JSON.stringify(inventoryList))
-  const [addInventory, setAddInventory] = useState(true)
+  const [addInventory, setAddInventory] = useState(false)
 
 
   const InventoryItems = Object.entries(inventoryList).map((item) => {
     return (
-      <InventoryItem item={item} />
+      <InventoryItem item={item} setInventoryList={setInventoryList}/>
     )
   })
   const expiryDates = Object.entries(inventoryList).map((item) => {
@@ -74,7 +74,7 @@ const InventoryContainer = () => {
 
           <div className="bg-[#263238] pt-[7%]">
 
-            {addInventory && <AddInventoryItem inventoryList={inventoryList} setInventoryList={setInventoryList}/>}
+            {addInventory && <AddInventoryItem inventoryList={inventoryList} setInventoryList={setInventoryList} setAddInventory={setAddInventory}/>}
           </div>
 
 
@@ -83,7 +83,7 @@ const InventoryContainer = () => {
           <div className="ADDSAVE bg-[#263238] flex py-[1rem] px-[2rem] justify-between">
             <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] text-primary-red">
               <img className="relative w-6 h-6" alt="" src="/assets/add.svg" />
-              <div className="relative font-semibold text-[#A05000]" onClick={() => setAddInventory(true)}>Add Item</div>
+              <div className="relative font-semibold text-[#A05000]" onClick={() => setAddInventory(!addInventory)}>Add Item</div>
             </a>
 
             

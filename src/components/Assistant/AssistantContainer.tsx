@@ -1,6 +1,8 @@
 const AssistantContainer = () => {
   return (
-    <div>AssistantContainer</div>
+    <div className="h-[100vh] mx-[2%] mt-[2%]">
+      
+    </div>
   )
 }
 

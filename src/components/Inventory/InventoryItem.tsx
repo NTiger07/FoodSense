@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const InventoryItem = (props: any) => {
     const { item } = props
@@ -21,6 +21,7 @@ const InventoryItem = (props: any) => {
         }
         setItemQuantity(itemQuantity);
     }
+
     const removeItem = () => {
         const storedInventoryList = JSON.parse(localStorage.getItem("inventoryList") || "[]");
         const itemIndex = storedInventoryList.findIndex((storedItem) => storedItem.id === item[1].id);
@@ -63,6 +64,9 @@ const InventoryItem = (props: any) => {
                         <div className="relative font-semibold text-[#A05000]">Save changes</div>
                     </a>
                 </div>) : <div></div>}
+                <div className="pr-[2rem] cursor-pointer" onClick={removeItem}>
+                    X
+                </div>
 
             </div>
         </div>

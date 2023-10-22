@@ -15,7 +15,7 @@ const InventoryContainer = () => {
 
   
   localStorage.setItem("inventoryList", JSON.stringify(inventoryList))
-  const [addInventory, setAddInventory] = useState(false)
+  const [addInventory, setAddInventory] = useState(true)
 
 
   const InventoryItems = Object.entries(inventoryList).map((item) => {

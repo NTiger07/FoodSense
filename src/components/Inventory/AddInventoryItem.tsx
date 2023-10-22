@@ -18,8 +18,8 @@ const AddInventoryItem = (props: any) => {
     const [notes, setNotes] = useState("")
 
     return (
-
-        <div className="flex items-center justify-between mb-[3%] gap-2 bg-[#263238] text-light-black font-medium">
+        // bg - [#263238]
+        <div className="flex items-center justify-between mb-[3%] gap-2 bg-primary text-light-black font-medium">
             <div className="NAME flex w-[100%] md:w-[33%] mb-[5%] md:mb-0 flex-col items-start justify-center">
                 <div className="relative font-medium mb-[5%] text-[#f9f9f9]">Name</div>
                 <input
@@ -84,10 +84,10 @@ const AddInventoryItem = (props: any) => {
             </div>
 
             <button
-                className="cursor-pointer py-[10px] px-[30px] bg-[transparent] rounded-3xs flex flex-row items-start justify-start border-[1px] border-solid border-primary-red"
+                className="cursor-pointer py-[10px] px-[30px] bg-[transparent] rounded-3xs flex flex-row items-start justify-start border-[1px] border-solid border-[#A05000]"
                 onClick={addInventory}
             >
-                <b className="relative text-base font-work-sans text-primary-red text-left">
+                <b className="relative text-base font-work-sans text-[#A05000] text-left">
                     Add
                 </b>
             </button>

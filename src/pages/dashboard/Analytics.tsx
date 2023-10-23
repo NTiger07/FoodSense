@@ -1,4 +1,4 @@
-import { AnalyticsContainer } from '../../components/AnalyticsContainer'
+import AnalyticsContainer from "../../components/Analytics/AnalyticsContainer"
 
 const Analytics = () => {
   return (

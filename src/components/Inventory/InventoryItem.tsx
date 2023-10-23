@@ -42,7 +42,7 @@ const InventoryItem = (props: any) => {
         }
         setItemQuantity(itemQuantity);
         setSaveVisible(false)
-        toast.success("Inventory Updated")
+        toast.info("Inventory Updated")
     }
 
     const removeItem = () => {
@@ -55,7 +55,24 @@ const InventoryItem = (props: any) => {
 
         setInventoryList(storedInventoryList);
         handleClose()
+        toast.info("Item removed")
     };
+
+    const trashItem = () => {
+        const storedInventoryListJSON = localStorage.getItem("inventoryList");
+        const storedInventoryList = JSON.parse(storedInventoryListJSON) || [];
+        const itemIndex = storedInventoryList.findIndex((storedItem) => storedItem.id === item[1].id);
+        if (itemIndex !== -1) {
+            storedInventoryList.splice(itemIndex, 1);
+            localStorage.setItem("inventoryList", JSON.stringify(storedInventoryList));
+        }
+        setInventoryList(storedInventoryList);
+
+        localStorage.setItem("InventoryTrashList", JSON.stringify(itemIndex))
+        handleClose();
+        toast.info("Item trashed")
+
+    }
 
 
 
@@ -78,7 +95,7 @@ const InventoryItem = (props: any) => {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={removeItem}>Remove Item</Button>
-                    <Button onClick={handleClose}>
+                    <Button onClick={trashItem}>
                         Trash Item
                     </Button>
                 </DialogActions>

@@ -15,7 +15,7 @@ const AddInventoryItem = (props: any) => {
         setQuantity("")
         setExpiryDate("")
         setNotes("")
-        toast.success("Item sucessfully added")
+        toast.info("Item added")
     }
     const handleExpiryDateChange = (time) => {
         setExpiryDate(dayjs(time, 'DD-MM-YYYY').format('DD-MM-YYYY'))

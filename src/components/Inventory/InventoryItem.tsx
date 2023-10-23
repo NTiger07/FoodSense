@@ -1,10 +1,27 @@
 import { useMemo, useState } from "react";
 import { toast } from "react-toastify";
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 
 const InventoryItem = (props: any) => {
-    const { item, setInventoryList } = props
+    const [open, setOpen] = useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
 
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+
+
+    const { item, setInventoryList } = props
     const setBackdropStyle = useMemo(() => {
         if (item[1].id % 2 == 0) {  // even number
             return { backgroundColor: "#37474F", };
@@ -37,10 +54,35 @@ const InventoryItem = (props: any) => {
         }
 
         setInventoryList(storedInventoryList);
+        handleClose()
     };
+
+
+
 
     return (
         <div className="relative py-[2%] text-[#F9F9F9]" style={setBackdropStyle}>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Trash Item?"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Do you want to move this item to trash or remove it from your inventory?"
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={removeItem}>Remove Item</Button>
+                    <Button onClick={handleClose}>
+                        Trash Item
+                    </Button>
+                </DialogActions>
+            </Dialog>
             <div className="flex flex-row items-center">
                 <div className="w-[30%] flex">
                     <div className="w-[20%] flex justify-center">
@@ -69,8 +111,8 @@ const InventoryItem = (props: any) => {
                         <div className="relative font-semibold text-[#A05000]">Save changes</div>
                     </a>
                 </div>)}
-                <div className="absolute right-2 pr-[2rem] cursor-pointer" onClick={removeItem}>
-                    X
+                <div className="absolute right-2 pr-[2rem] cursor-pointer" onClick={handleClickOpen}>
+                    <img src="/assets/delete-bin-line.svg" className="w-[30px]" alt="" />
                 </div>
 
             </div>

@@ -9,8 +9,8 @@ const InventoryContainer = () => {
 
 
   const [inventoryList, setInventoryList] = useState(storedInventoryList || [
-    { "id": 1, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13/10/24", "notes": "For Sundays" },
-    { "id": 2, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13/10/24", "notes": "For Sundays" },
+    { "id": 1, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13-10-2023", "notes": "For Sundays" },
+    { "id": 2, "name": "Indomie Noodles", "quantity": "40", "expiry_date": "13-10-2023", "notes": "For Sundays" },
   ])
 
   
@@ -60,10 +60,11 @@ const InventoryContainer = () => {
             </div>
 
             <div className="REST flex flex-row items-center w-[70%]">
-              <div className="w-[20%]">Quantity</div>
+              <div className="w-[20%]">Units</div>
               <div className="w-[20%]">Expiry Date</div>
               <div className="w-[60%]">Notes</div>
             </div>
+
           </div>
 
 

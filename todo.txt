@@ -1,3 +1,2 @@
-
 add images and tweak ui color to make it vibrant
 work on trash item

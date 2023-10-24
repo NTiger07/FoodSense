@@ -1,13 +1,12 @@
 // import { useState } from "react";
 
 const AnalyticsContainer = () => {
-    const storedInventoryTrashListJSON = localStorage.getItem("inventoryTrashList");
-    // const storedInventoryTrashList = JSON.parse(storedInventoryTrashListJSON)
-    // const [inventoryTrashList, setInventoryTrashList] = useState(storedInventoryTrashList)
+  const storedTrashListJSON = localStorage.getItem("trashList");
+  const storedTrashList = JSON.parse(storedTrashListJSON)
 
 
-    console.log(storedInventoryTrashListJSON)
-    
+  console.log(storedTrashList)
+
   return (
     <div>AnalyticsContainer</div>
   )

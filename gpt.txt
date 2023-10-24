@@ -1,13 +1,20 @@
-"Foodsense" sounds like a fantastic project idea with the potential to make a significant positive impact on reducing food waste. Here are some essential features you might consider including in your Foodsense web application:
-
-User Profiles: Allow users to create profiles where they can input preferences, dietary restrictions, and allergy information.
-
 Inventory Management:
 
 Add Items: Users can manually add food items to their virtual pantry.
 Barcode Scanning: Integration with barcode scanning technology to scan and add items quickly.
 Expiration Dates: Users can input expiration dates for perishable items.
 Quantity Tracking: Keep track of quantities for each item.
+
+
+
+
+
+
+
+"Foodsense" sounds like a fantastic project idea with the potential to make a significant positive impact on reducing food waste. Here are some essential features you might consider including in your Foodsense web application:
+
+User Profiles: Allow users to create profiles where they can input preferences, dietary restrictions, and allergy information.
+
 
 Smart Recommendations:
 

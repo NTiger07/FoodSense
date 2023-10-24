@@ -8,7 +8,7 @@ const InventoryContainer = () => {
   const storedInventoryList = JSON.parse(storedInventoryListJSON)
 
 
-  const [inventoryList, setInventoryList] = useState(storedInventoryList)
+  const [inventoryList, setInventoryList] = useState(storedInventoryList || [])
 
   
   localStorage.setItem("inventoryList", JSON.stringify(inventoryList))

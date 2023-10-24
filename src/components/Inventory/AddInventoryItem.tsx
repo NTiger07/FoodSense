@@ -63,7 +63,7 @@ const AddInventoryItem = (props: any) => {
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
                                 label="Expiry Date"
-                                value={expiryDate}
+                                value={dayjs(expiryDate)}
                                 onChange={handleExpiryDateChange}
                                 format="DD-MM-YYYY"
                             />

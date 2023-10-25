@@ -6,12 +6,13 @@ import ExpiryItem from "./ExpiryItem"
 const InventoryContainer = () => {
   const storedInventoryListJSON = localStorage.getItem("inventoryList");
   const storedInventoryList = JSON.parse(storedInventoryListJSON)
+  console.log(storedInventoryList)
 
 
   const [inventoryList, setInventoryList] = useState(storedInventoryList || [])
 
   
-  localStorage.setItem("inventoryList", JSON.stringify(inventoryList))
+  localStorage.setItem("inventoryList", JSON.stringify(inventoryList || []))
   const [addInventory, setAddInventory] = useState(false)
 
 

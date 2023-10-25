@@ -25,10 +25,10 @@ const AnalyticsContainer = () => {
         </div>
 
 
-        <div className="h-[40%] bg-primary-red">
-          <div className="REDUCTIONPROG"></div>
-          <div className="IMPACT"></div>
-          <div className="MONTHLY SUMMARY"></div>
+        <div className="h-[40%] gap-4 flex items-center">
+          <div className="REDUCTIONPROG w-[33%] rounded-lg shadow-lg bg-[#37474F] h-[100%]"></div>
+          <div className="IMPACT w-[33%] rounded-lg shadow-lg bg-[#37474F] h-[100%]"></div>
+          <div className="MONTHLY SUMMARY w-[33%] rounded-lg shadow-lg bg-[#37474F] h-[100%]"></div>
         </div>
 
 

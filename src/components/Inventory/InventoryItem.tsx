@@ -30,6 +30,7 @@ const InventoryItem = (props: any) => {
     }, [item]);
 
     const [itemQuantity, setItemQuantity] = useState(item[1].quantity as number)
+    const [itemNotes, setItemNotes] = useState(item[1].notes)
     const [saveVisible, setSaveVisible] = useState(false)
 
 
@@ -42,6 +43,22 @@ const InventoryItem = (props: any) => {
         }
         setItemQuantity(itemQuantity);
         setSaveVisible(false)
+    }
+
+    const updateNotes = () => {
+        const storedInventoryList = JSON.parse(localStorage.getItem("inventoryList") || "[]");
+        const itemIndex = storedInventoryList.findIndex((storedItem) => storedItem.id === item[1].id);
+        if (itemIndex !== -1) {
+            storedInventoryList[itemIndex].notes = itemNotes;
+            localStorage.setItem("inventoryList", JSON.stringify(storedInventoryList));
+        }
+        setItemNotes(itemNotes);
+        setSaveVisible(false)
+    }
+
+    const updateItem = () => {
+        updateQuantity()
+        updateNotes()
         toast.info("Inventory Updated")
     }
 
@@ -121,20 +138,21 @@ const InventoryItem = (props: any) => {
                 <div className="flex items-center w-[70%]">
                     <div className="flex w-[20%] gap-[5%]">
                         {itemQuantity < 10 ? 0 : ""}{itemQuantity}
-                        <span className="cursor-pointer" onClick={() => {setItemQuantity(itemQuantity - 1 + 2); setSaveVisible(true)}}><img src="/assets/add.svg" alt="" /></span>
+                        <span className="cursor-pointer" onClick={() => { setItemQuantity(itemQuantity - 1 + 2); setSaveVisible(true) }}><img src="/assets/add.svg" alt="" /></span>
                         <span className="cursor-pointer" onClick={() => { if (itemQuantity > 1) { setItemQuantity(itemQuantity - 1) } setSaveVisible(true) }}><img src="/assets/minus.svg" alt="" /></span>
                     </div>
                     <div className="w-[20%]">
                         {item[1].expiry_date}
                     </div>
                     <div className="w-[60%]">
-                        {item[1].notes}
+                        {/* {item[1].notes} */}
+                        <input type="text" defaultValue={item[1].notes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => {setSaveVisible(true); setItemNotes(e.target.value)}}/>
                     </div>
                 </div>
-                {saveVisible && (<div className="absolute right-20 flex flex-row items-center cursor-pointer" onClick={updateQuantity}>
-                    <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] text-primary-red">
-                        <img className="relative w-6 h-6" alt="" src="/assets/save.svg" />
-                        <div className="relative font-semibold text-[#A05000]">Save changes</div>
+                {saveVisible && (<div className="absolute right-20 flex flex-row items-center cursor-pointer" onClick={updateItem}>
+                    <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] pr-[.5rem] text-primary-red">
+                        <img className="relative w-[30px]" alt="" src="/assets/save.svg" />
+                        {/* <div className="relative font-semibold text-[#A05000]">Save changes</div> */}
                     </a>
                 </div>)}
                 <div className="absolute right-2 pr-[2rem] cursor-pointer" onClick={handleClickOpen}>

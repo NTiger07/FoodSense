@@ -1,4 +1,5 @@
 add images and tweak ui color to make it vibrant
 integrate google fonts
 package for long text (Notes)
-package (moment) for date formatting
+cors error
+update readme

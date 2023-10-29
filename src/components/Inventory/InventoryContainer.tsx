@@ -1,31 +1,48 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import AddInventoryItem from "./AddInventoryItem"
 import InventoryItem from "./InventoryItem"
 import ExpiryItem from "./ExpiryItem"
+import axios from "axios"
 
 const InventoryContainer = () => {
+  useEffect(() => {
+    getItems()
+  }, [])
+
   const storedInventoryListJSON = localStorage.getItem("inventoryList");
   const storedInventoryList = JSON.parse(storedInventoryListJSON)
 
 
   const [inventoryList, setInventoryList] = useState(storedInventoryList || [])
 
-  
+
   localStorage.setItem("inventoryList", JSON.stringify(inventoryList || []))
   const [addInventory, setAddInventory] = useState(false)
 
 
   const InventoryItems = Object.entries(inventoryList).map((item) => {
     return (
-      <InventoryItem item={item} setInventoryList={setInventoryList}/>
+      <InventoryItem item={item} setInventoryList={setInventoryList} />
     )
   })
+
   const expiryDates = Object.entries(inventoryList).map((item) => {
     return (
       <ExpiryItem item={item} />
     )
   })
 
+  const getItems = () => {
+    axios
+      // .get("http://localhost:3000/items/all")
+      .get("http://localhost:3000/dashboard")
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
 
   return (
     <div className="h-[100vh] mx-[2%] mt-[2%]">
@@ -72,7 +89,7 @@ const InventoryContainer = () => {
 
           <div className="bg-[#263238] pt-[7%]">
 
-            {addInventory && <AddInventoryItem inventoryList={inventoryList} setInventoryList={setInventoryList} setAddInventory={setAddInventory}/>}
+            {addInventory && <AddInventoryItem inventoryList={inventoryList} setInventoryList={setInventoryList} setAddInventory={setAddInventory} />}
           </div>
 
 
@@ -84,7 +101,7 @@ const InventoryContainer = () => {
               <div className="relative font-semibold text-[#A05000]" onClick={() => setAddInventory(!addInventory)}>Add Item</div>
             </a>
 
-            
+
           </div>
         </div>
 

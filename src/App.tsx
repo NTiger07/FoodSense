@@ -11,6 +11,7 @@ import Login from './pages/auth/Login';
 import { AuthProvider } from './context/auth';
 
 function App() {
+
   return (
     <AuthProvider>
       <div className='relative w-[100vw] flex text-[#fff]'>

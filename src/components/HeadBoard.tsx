@@ -3,19 +3,19 @@ import { useEffect } from "react"
 
 const HeadBoard = () => {
 
-  useEffect(() => {
-    getItems()
-  }, [])
+  // useEffect(() => {
+  //   getItems()
+  // }, [])
   
-  const getItems = () => {
-    axios.get("http://localhost:3000/auth/google")
-    .then((res) => {
-      console.log(res.data)
-    })
-    .catch((err) => {
-      console.error(err)
-    })
-  }
+  // const getItems = () => {
+  //   axios.get("http://localhost:3000/auth/google")
+  //   .then((res) => {
+  //     console.log(res.data)
+  //   })
+  //   .catch((err) => {
+  //     console.error(err)
+  //   })
+  // }
 
 
   return (

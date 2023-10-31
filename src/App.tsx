@@ -18,10 +18,10 @@ function App() {
         <div className='absolute'>
           <ToastContainer position='top-center' />
         </div>
-        <div className='w-[5%]'>
+        {/* <div className='w-[5%]'>
           <SideBar />
-        </div>
-        <div className='w-[95%] h-[100vh] overflow-y-scroll bg-[#263238]'>
+        </div> */}
+        <div className='w-[100%] h-[100vh] overflow-y-scroll bg-[#263238]'>
           <Routes>
             <Route path='/auth' element={<Login />} />
             <Route path='/dashboard' element={<DashBoard />} />

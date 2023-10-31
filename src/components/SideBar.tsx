@@ -12,7 +12,7 @@ const SideBar = () => {
                 <img src="/assets/menu-white.svg" className="w-[1.8rem]" alt="" />
             </div>
             <div className="flex flex-col w-full items-center justify-center gap-[3rem]">
-                <div className={`flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => navigate("/")}>
+                <div className={`flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => navigate("/dashboard")}>
                     <img src="/assets/home-white.svg" className="w-[1.8rem]" alt="" />
                     <span className={`w-[100%] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}>Dashboard</span>
                 </div>
@@ -32,7 +32,8 @@ const SideBar = () => {
                     <img src="/assets/education-white.svg" className="w-[1.8rem]" alt="" />
                     <span className={`w-[100%] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}>Education</span>
                 </div>
-                <div className={`mt-[5rem] flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => window.location.href = "http://localhost:3000/auth/logout"}>
+                {/* <div className={`mt-[5rem] flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => window.location.href = "http://localhost:3000/auth/logout"}> */}
+                <div className={`mt-[5rem] flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() =>navigate("/auth")}>
                     <img src="/assets/logout.svg" className="w-[1.8rem]" alt="" />
                     <span className={`w-[100%] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}>Sign Out</span>
                 </div>

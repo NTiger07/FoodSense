@@ -11,4 +11,6 @@ passwords dont match
 for validation login and register
 if user loggin dont show login and register routes
 
+x and y scroll dashboard
+
 redux logout sidebar

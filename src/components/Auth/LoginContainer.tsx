@@ -5,13 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import { setUser } from "../../redux/userSlice.js"
 
-
-import { useSelector } from 'react-redux';
-
 const LoginContainer = () => {
-    const user = useSelector((state) => state.user);
-
-
     const dispatch = useDispatch()
     const navigate = useNavigate()
 

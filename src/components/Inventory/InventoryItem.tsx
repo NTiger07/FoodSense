@@ -7,6 +7,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import moment from "moment";
 
 
 const InventoryItem = (props: any) => {
@@ -129,10 +130,10 @@ const InventoryItem = (props: any) => {
             <div className="flex flex-row items-center">
                 <div className="w-[30%] flex">
                     <div className="w-[20%] flex justify-center">
-                        {item[1].id}
+                        {item[1].itemId}
                     </div>
                     <div className="w-[80%]">
-                        {item[1].name}
+                        {item[1].itemName}
                     </div>
                 </div>
                 <div className="flex items-center w-[70%]">
@@ -142,11 +143,11 @@ const InventoryItem = (props: any) => {
                         <span className="cursor-pointer" onClick={() => { if (itemQuantity > 1) { setItemQuantity(itemQuantity - 1) } setSaveVisible(true) }}><img src="/assets/minus.svg" alt="" /></span>
                     </div>
                     <div className="w-[20%]">
-                        {item[1].expiry_date}
+                        {moment(item[1].expiryDate).format('DD-MM-YYYY')}
                     </div>
                     <div className="w-[60%]">
                         {/* {item[1].notes} */}
-                        <input type="text" defaultValue={item[1].notes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => {setSaveVisible(true); setItemNotes(e.target.value)}}/>
+                        <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => {setSaveVisible(true); setItemNotes(e.target.value)}}/>
                     </div>
                 </div>
                 {saveVisible && (<div className="absolute right-20 flex flex-row items-center cursor-pointer" onClick={updateItem}>

@@ -5,18 +5,13 @@ import ExpiryItem from "./ExpiryItem"
 import axios from "axios"
 
 const InventoryContainer = () => {
+  const userDataLocal = localStorage.getItem('persist:foodsense')
+  const userDataLocalJSON = JSON.parse(userDataLocal)
   useEffect(() => {
     getItems()
   }, [])
-
-  const storedInventoryListJSON = localStorage.getItem("inventoryList");
-  const storedInventoryList = JSON.parse(storedInventoryListJSON)
-
-
-  const [inventoryList, setInventoryList] = useState(storedInventoryList || [])
-
-
-  localStorage.setItem("inventoryList", JSON.stringify(inventoryList || []))
+  
+  const [inventoryList, setInventoryList] = useState([])
   const [addInventory, setAddInventory] = useState(false)
 
 
@@ -34,10 +29,9 @@ const InventoryContainer = () => {
 
   const getItems = () => {
     axios
-      // .get("http://localhost:3000/items/all")
-      .get("http://localhost:3000/dashboard")
+      .get(`http://localhost:3000/items/all/${userDataLocalJSON.id.slice(1, 25)}`)
       .then((res) => {
-        console.log(res)
+        setInventoryList(res.data)
       })
       .catch((err) => {
         console.error(err)

@@ -7,13 +7,14 @@ import Assistant from './pages/dashboard/Assistant';
 import Education from './pages/dashboard/Education';
 import Analytics from './pages/dashboard/Analytics';
 import Login from './pages/auth/Login';
-import { AuthProvider } from './context/auth';
 import Register from './pages/auth/Register';
+import { Provider } from 'react-redux';
+import store from "../src/redux/store.js"
 
 function App() {
 
   return (
-    <AuthProvider>
+    <Provider store={store}>
       <div className='relative w-[100vw] flex text-[#fff]'>
         <div className='absolute'>
           <ToastContainer position='top-center' />
@@ -29,10 +30,10 @@ function App() {
             <Route path='/education' element={<Education />} />
           </Routes>
         </div>
-
       </div>
-    </AuthProvider>
-    
+    </Provider>
+
+
 
 
   )

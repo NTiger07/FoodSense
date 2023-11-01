@@ -1,7 +1,11 @@
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 
 const RegisterContainer = () => {
+  const navigate = useNavigate()
+
   const [firstname, setFirstname] = useState("")
   const [lastname, setLastname] = useState("")
   const [email, setEmail] = useState("")
@@ -14,15 +18,23 @@ const RegisterContainer = () => {
     lastName: lastname,
     password
   }
+
   const registerUser = () => {
-    axios
-    .post("http://localhost:3000/auth/register", userCredentials)
-    .then((res) => {
-      console.log(res)
-    })
-    .catch((err) => {
-      console.error(err)
-    })
+    if (password == confirmPassword) {
+      axios
+        .post("http://localhost:3000/auth/register", userCredentials)
+        .then((res) => {
+          console.log(res)
+          navigate("/dashboard")
+        })
+        .catch((err) => {
+          console.error(err)
+        })
+    }
+    else{
+      toast.error("Passwords don't match")
+    }
+
   }
 
 
@@ -48,7 +60,7 @@ const RegisterContainer = () => {
             </p>
             <div>
               <div className="grid grid-cols-2 gap-5">
-                <input type="text" placeholder="First name" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem]" onChange={(e) => setFirstname(e.target.value)}/>
+                <input type="text" placeholder="First name" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem]" onChange={(e) => setFirstname(e.target.value)} />
                 <input type="text" placeholder="Last name" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem]" onChange={(e) => setLastname(e.target.value)} />
               </div>
               <div className="mt-5">

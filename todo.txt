@@ -3,4 +3,4 @@ integrate google fonts
 update readme
 
 
-auth ui (Login, register)
+auth ui (Login, register) cleanup later

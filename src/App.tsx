@@ -9,12 +9,12 @@ import Analytics from './pages/dashboard/Analytics';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import { Provider } from 'react-redux';
-import store from "../src/redux/store.js"
+import store1 from "../src/redux/store"
 
 function App() {
 
   return (
-    <Provider store={store}>
+    <Provider store={store1}>
       <div className='relative w-[100vw] flex text-[#fff]'>
         <div className='absolute'>
           <ToastContainer position='top-center' />

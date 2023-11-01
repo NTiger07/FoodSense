@@ -1,10 +1,18 @@
 import axios from "axios"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
+import { setUser } from "../../redux/userSlice.js"
+
+
+import { useSelector } from 'react-redux';
 
 const LoginContainer = () => {
+    const user = useSelector((state) => state.user);
 
+
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const [username, setUsername] = useState("")
@@ -20,8 +28,10 @@ const LoginContainer = () => {
         axios
             .post("http://localhost:3000/auth/login", userCredentials)
             .then((res) => {
-                console.log(res)
-                navigate("/dashboard")
+                // console.log(res.data)
+                dispatch(setUser(res.data))
+                console.log(user)
+                // navigate("/dashboard")
             })
             .catch((err) => {
                 console.error(err)

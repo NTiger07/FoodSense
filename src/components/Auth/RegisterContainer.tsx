@@ -1,9 +1,12 @@
 import axios from "axios"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
+import { setUser } from "../../redux/userSlice.js"
 
 const RegisterContainer = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const [firstname, setFirstname] = useState("")
@@ -24,14 +27,15 @@ const RegisterContainer = () => {
       axios
         .post("http://localhost:3000/auth/register", userCredentials)
         .then((res) => {
-          console.log(res)
-          navigate("/dashboard")
+          console.log(res.data)
+          dispatch(setUser(res.data))
+          // navigate("/dashboard")
         })
         .catch((err) => {
           console.error(err)
         })
     }
-    else{
+    else {
       toast.error("Passwords don't match")
     }
 

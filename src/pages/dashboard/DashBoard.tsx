@@ -1,4 +1,4 @@
-import MainDashBoard from "../../components/MainDashBoard"
+import MainDashBoard from "../../components/DashBoard"
 import SideBar from "../../components/SideBar"
 
 const Dashboard = () => {

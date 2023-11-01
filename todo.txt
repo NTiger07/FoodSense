@@ -1,3 +1,6 @@
 add images and tweak ui color to make it vibrant
 integrate google fonts
 update readme
+
+
+auth ui (Login, register)

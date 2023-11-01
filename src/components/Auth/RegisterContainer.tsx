@@ -8,7 +8,7 @@ import { setUser } from "../../redux/userSlice.js"
 const RegisterContainer = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+  
   const [firstname, setFirstname] = useState("")
   const [lastname, setLastname] = useState("")
   const [email, setEmail] = useState("")

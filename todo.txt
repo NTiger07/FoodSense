@@ -9,7 +9,6 @@ register left learn more
 add email and password empty kini
 passwords dont match
 for validation login and register
-if user loggin dont show login and register routes
 trim local storage
 userdata on pageload
 x and y scroll dashboard

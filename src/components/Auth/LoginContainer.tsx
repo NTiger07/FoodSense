@@ -53,7 +53,7 @@ const LoginContainer = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <img src={`/assets/eye${visible ? "":"-off"}-line.svg`} className="w-[7%] cursor-pointer" alt="" onClick={() => setVisible(!visible)} />
+                    <img src={`/assets/eye${visible ? "" : "-off"}-line.svg`} className="w-[7%] cursor-pointer" alt="" onClick={() => setVisible(!visible)} />
                 </div>
                 <div className="flex justify-between text-sm mb-4">
                     <label className="flex items-center text-white">

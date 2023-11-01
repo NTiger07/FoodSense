@@ -1,4 +1,31 @@
+import axios from "axios"
+import { useState } from "react"
+
 const RegisterContainer = () => {
+  const [firstname, setFirstname] = useState("")
+  const [lastname, setLastname] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+
+  const userCredentials = {
+    email,
+    firstName: firstname,
+    lastName: lastname,
+    password
+  }
+  const registerUser = () => {
+    axios
+    .post("http://localhost:3000/auth/register", userCredentials)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+  }
+
+
   return (
     <div className="min-h-screen flex items-center">
       <div className="container mx-auto">
@@ -21,22 +48,23 @@ const RegisterContainer = () => {
             </p>
             <div>
               <div className="grid grid-cols-2 gap-5">
-                <input type="text" placeholder="First name" className="outline-none border-none rounded-md py-[.5rem] px-[.6rem]" />
-                <input type="text" placeholder="Last name" className="outline-none border-none rounded-md py-[.5rem] px-[.6rem]" />
+                <input type="text" placeholder="First name" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem]" onChange={(e) => setFirstname(e.target.value)}/>
+                <input type="text" placeholder="Last name" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem]" onChange={(e) => setLastname(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="text" placeholder="Email" className="outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" />
+                <input type="email" placeholder="Email" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="password" placeholder="Password" className="outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" />
+                <input type="password" placeholder="Password" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" onChange={(e) => setPassword(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="password" placeholder="Confirm Password" className="outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" />
+                <input type="password" placeholder="Confirm Password" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" onChange={(e) => setConfirmPassword(e.target.value)} />
               </div>
               <div className="mt-5">
                 <button
                   type="submit"
-                  className="w-full h-12 bg-white text-black rounded-full font-semibold hover:bg-opacity-90 transition duration-300"
+                  onClick={registerUser}
+                  className="cursor-pointer w-full h-12 bg-white text-black rounded-full font-semibold hover:bg-opacity-90 transition duration-300"
                 >
                   Register Now
                 </button>

@@ -6,3 +6,6 @@ update readme
 auth ui (Login, register) cleanup later rounded-full input color for password Login
 make login and register uniform
 add email and password empty kini
+redux
+passwords dont match
+for validation login and register

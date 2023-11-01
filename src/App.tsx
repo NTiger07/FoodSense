@@ -9,13 +9,15 @@ import Analytics from './pages/dashboard/Analytics';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import { Provider } from 'react-redux';
-import store1 from "../src/redux/store"
+import store1, { persistor } from "../src/redux/store"
+import { PersistGate } from 'redux-persist/es/integration/react';
 
 function App() {
 
   return (
     <Provider store={store1}>
-      <div className='relative w-[100vw] flex text-[#fff]'>
+      <PersistGate loading={null} persistor={persistor}>
+        <div className='relative w-[100vw] flex text-[#fff]'>
         <div className='absolute'>
           <ToastContainer position='top-center' />
         </div>
@@ -31,6 +33,8 @@ function App() {
           </Routes>
         </div>
       </div>
+      </PersistGate>
+      
     </Provider>
 
 

@@ -1,10 +1,8 @@
-import { useSelector } from 'react-redux';
-
 const DashBoard = () => {
-  const user = useSelector((state) => state.user); 
-  console.log(user)
+  const userData = JSON.parse(localStorage.getItem('persist:foodsense'))
+
   return (
-    <div>DashBoard</div>
+    <div>Welcome {userData.firstname} {userData.lastname}</div>
   )
 }
 

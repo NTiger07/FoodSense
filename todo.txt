@@ -7,8 +7,8 @@ auth ui (Login, register) cleanup later rounded-full input color for password Lo
 make login and register uniform
 register left learn more
 add email and password empty kini
-redux
 passwords dont match
 for validation login and register
+if user loggin dont show login and register routes
 
 redux logout sidebar

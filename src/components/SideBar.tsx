@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom"
 const SideBar = () => {
     const navigate = useNavigate()
     const [isSidebarExpanded, setIsSideBarExpanded] = useState(false)
-
+    const logoutUser = () => {
+        navigate("/auth/login")
+    }
 
     return (
         <div className={`relative bg-[#37474F] transition-all h-[100vh] w-[100%] flex flex-col shadow-xl overflow-clip pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`}>
@@ -32,7 +34,7 @@ const SideBar = () => {
                     <img src="/assets/education-white.svg" className="w-[1.8rem]" alt="" />
                     <span className={`w-[100%] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}>Education</span>
                 </div>
-                <div className={`mt-[5rem] flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => window.location.href = "http://localhost:3000/auth/logout"}>
+                <div className={`mt-[5rem] flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => logoutUser}>
                     <img src="/assets/logout.svg" className="w-[1.8rem]" alt="" />
                     <span className={`w-[100%] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}>Sign Out</span>
                 </div>

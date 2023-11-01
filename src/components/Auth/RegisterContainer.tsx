@@ -27,9 +27,8 @@ const RegisterContainer = () => {
       axios
         .post("http://localhost:3000/auth/register", userCredentials)
         .then((res) => {
-          console.log(res.data)
           dispatch(setUser(res.data))
-          // navigate("/dashboard")
+          navigate("/dashboard")
         })
         .catch((err) => {
           console.error(err)
@@ -84,6 +83,9 @@ const RegisterContainer = () => {
                 >
                   Register Now
                 </button>
+              </div>
+              <div className="text-sm text-center mt-4">
+                Already have an account? <a href="/auth/login" className="text-white font-semibold hover:underline">Login</a>
               </div>
             </div>
           </div>

@@ -19,16 +19,19 @@ const LoginContainer = () => {
     }
 
     const authenticateUser = () => {
-        axios
-            .post("http://localhost:3000/auth/login", userCredentials)
-            .then((res) => {
-                dispatch(setUser(res.data))
-                navigate("/dashboard")
-            })
-            .catch((err) => {
-                console.error(err)
-                toast.error("Error Logging in")
-            })
+        if (username !== "" && password !== "") {
+            axios
+                .post("http://localhost:3000/auth/login", userCredentials)
+                .then((res) => {
+                    dispatch(setUser(res.data))
+                    navigate("/dashboard")
+                })
+                .catch((err) => {
+                    console.error(err)
+                    toast.error("Error Logging in")
+                })
+        }
+
     }
 
 
@@ -40,31 +43,32 @@ const LoginContainer = () => {
                     <input
                         type="text"
                         placeholder="Email"
-                        className="w-full h-12 outline-none border-none border-white border-opacity-20 rounded-full px-4 text-black"
+                        className="w-full h-12 outline-none border-none border-white rounded-full px-4 text-black"
                         onChange={(e) => setUsername(e.target.value)}
+                        autoComplete="false"
                         required
                     />
                 </div>
-                <div className="mb-6 flex justify-between flex-row w-full h-12 px-[1rem] rounded-full text-black bg-white">
+                <div className="mb-[3rem] flex justify-between flex-row items-center w-full h-12 px-[1rem] rounded-full text-black bg-[#E8F0FE]">
                     <input
                         type={visible ? "text" : "password"}
                         placeholder="Password"
-                        className="outline-none border-none px-4 w-[80%] bg-white"
+                        className="outline-none border-none px-4 w-[80%] h-[90%]"
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                     <img src={`/assets/eye${visible ? "" : "-off"}-line.svg`} className="w-[7%] cursor-pointer" alt="" onClick={() => setVisible(!visible)} />
                 </div>
-                <div className="flex justify-between text-sm mb-4">
+                {/* <div className="flex justify-between text-sm mb-4">
                     <label className="flex items-center text-white">
                         <input type="checkbox" className="mr-2" />
                         Remember Me
                     </label>
                     <a href="#" className="text-white hover:underline">Forgot Password</a>
-                </div>
+                </div> */}
                 <button
                     onClick={authenticateUser}
-                    className="w-full h-12 bg-white text-black rounded-full font-semibold hover:bg-opacity-90 transition duration-300"
+                    className={`w-full h-12 bg-white text-black rounded-full font-semibold hover:bg-opacity-90 transition duration-300 cursor-not-allowed ${password !== "" ? "cursor-not-allowed" : ""}`}
                 >
                     Login
                 </button>

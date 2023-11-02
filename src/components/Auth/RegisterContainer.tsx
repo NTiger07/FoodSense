@@ -50,31 +50,32 @@ const RegisterContainer = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-primary">
             <h1 className="text-black text-3xl mb-3">Welcome</h1>
             <div>
-              <p className="text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suspendisse aliquam varius rutrum purus maecenas ac <a href="#" className="text-purple-500 font-semibold">Learn more</a></p>
+              <p className="text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suspendisse aliquam varius rutrum purus maecenas ac</p>
             </div>
           </div>
 
 
 
-          <div className="w-full lg:w-1/2 py-16 px-12">
+          <div className="w-full lg:w-1/2 py-16 px-8">
             <h2 className="text-3xl mb-4">Register</h2>
             <p className="mb-4">
               Create your account. It’s free and only takes a minute
             </p>
             <div>
               <div className="grid grid-cols-2 gap-5">
-                <input type="text" placeholder="First name" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem]" onChange={(e) => setFirstname(e.target.value)} />
-                <input type="text" placeholder="Last name" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem]" onChange={(e) => setLastname(e.target.value)} />
+                <input type="text" placeholder="First name" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem]" onChange={(e) => setFirstname(e.target.value)} />
+                <input type="text" placeholder="Last name" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem]" onChange={(e) => setLastname(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="email" placeholder="Email" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" placeholder="Email" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="password" placeholder="Password" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" placeholder="Password" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setPassword(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="password" placeholder="Confirm Password" className="text-light-black outline-none border-none rounded-md py-[.5rem] px-[.6rem] w-full" onChange={(e) => setConfirmPassword(e.target.value)} />
+                <input type="password" placeholder="Confirm Password" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setConfirmPassword(e.target.value)} />
               </div>
+              {password == confirmPassword ? <></> : (<span className="ml-[15px] text-primary-red">Passwords don't match</span>)}
               <div className="mt-5">
                 <button
                   type="submit"

@@ -23,7 +23,7 @@ const Analytics = (props: any) => {
         <SideBar />
       </div>
       <div className="w-[95%]">
-        <AnalyticsContainer />
+        <AnalyticsContainer userData={userData}/>
       </div>
     </div>
   )

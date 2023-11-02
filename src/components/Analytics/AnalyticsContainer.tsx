@@ -1,70 +1,47 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ResponsiveLine } from "@nivo/line";
 import  mockData  from "./mockData"
 
 const AnalyticsContainer = (props: any) => {
   const { userData } = props
-
-  const [inventoryList, setInventoryList] = useState([])
-
-  const storedTrashListJSON = localStorage.getItem("trashList");
-  const storedTrashList = JSON.parse(storedTrashListJSON) || []
-
-
+  const [trashList, setTrashList] = useState([])
+  useEffect(() => {
+    getItems()
+  }, [])
   const getItems = () => {
     axios
-      .get(`http://localhost:3000/items/all/${userData.id}`)
+      .get(`http://localhost:3000/trash/all/${userData.id}`)
       .then((res) => {
-        setInventoryList(res.data)
+        setTrashList(res.data)
       })
       .catch((err) => {
         console.error(err)
       })
   }
 
-  const MyResponsiveLine = ({ data }) => (
-    <ResponsiveLine
-      data={data}
-      margin={{ top: 7, right: 30, bottom: 70, left: 60 }}
-      xScale={{ type: 'point' }}
-      yScale={{
-        type: 'linear',
-        min: 'auto',
-        max: 'auto',
-        stacked: true,
-        reverse: false
-      }}
-      yFormat=" >-.2f"
-      axisTop={null}
-      axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: 'Date',
-        legendOffset: 36,
-        legendPosition: 'middle'
-      }}
-      axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: 'Units',
-        legendOffset: -40,
-        legendPosition: 'middle'
-      }}
-      enablePoints={false}
-      pointSize={10}
-      pointColor={{ theme: 'background' }}
-      pointBorderWidth={2}
-      pointBorderColor={{ from: 'serieColor' }}
-      pointLabelYOffset={-12}
-      useMesh={true}
-    />
-  )
+  const [refinedData, setRefinedData] = useState([])
+  // useEffect(() => {
+  //   // Run when trash list changes
+  //   for (const item in trashList){
+  //     i
+  //   }
+  // },[trashList])
 
-  console.log(storedTrashList)
+  const chartData = [{
+    id: "Wasted Food",
+    color: "hsl(1, 70%, 50%)",
+    data: refinedData
+  }]
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="h-[100vh] mx-[2%] mt-[2%] flex flex-col gap-2">
@@ -79,8 +56,45 @@ const AnalyticsContainer = (props: any) => {
 
 
         <div className="MAINGRAPHS flex flex-row items-cente h-[60%] gap-4">
-          <div className="TRENDS w-[75%] h-[100%] bg-[#fff] rounded-lg shadow-lg">Waste Trends
-            <MyResponsiveLine data={mockData} />
+          <div className="TRENDS w-[75%] h-[100%] bg-[#fff] rounded-lg shadow-lg">
+            <ResponsiveLine
+              data={mockData}
+              margin={{ top: 15, right: 30, bottom: 50, left: 60 }}
+              xScale={{ type: 'point' }}
+              yScale={{
+                type: 'linear',
+                min: 'auto',
+                max: 'auto',
+                stacked: true,
+                reverse: false
+              }}
+              yFormat=" >-.2f"
+              axisTop={null}
+              axisRight={null}
+              axisBottom={{
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: 0,
+                legend: 'Date',
+                legendOffset: 36,
+                legendPosition: 'middle'
+              }}
+              axisLeft={{
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: 0,
+                legend: 'Units',
+                legendOffset: -40,
+                legendPosition: 'middle'
+              }}
+              enablePoints={false}
+              pointSize={10}
+              pointColor={{ theme: 'background' }}
+              pointBorderWidth={2}
+              pointBorderColor={{ from: 'serieColor' }}
+              pointLabelYOffset={-12}
+              useMesh={true}
+            />
           </div>
           <div className="TYPES_PIE w-[30%] h-[100%] bg-[#37474F] rounded-lg shadow-lg">Waste Type Pie</div>
         </div>

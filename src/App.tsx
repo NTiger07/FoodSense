@@ -41,7 +41,7 @@ function App() {
           <div className='absolute'>
             <ToastContainer position='top-center' />
           </div>
-          <div className='w-[100%] h-[100vh] overflow-y-scroll bg-[#263238]'>
+          <div className='w-[100%] h-[100vh] overflow-hidden bg-[#263238]'>
             <Routes>
               <Route path='/auth/login' element={<Login />} />
               <Route path='/auth/register' element={<Register />} />

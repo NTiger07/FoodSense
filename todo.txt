@@ -3,14 +3,10 @@ integrate google fonts
 update readme
 
 
-auth ui (Login, register) cleanup later rounded-full input color for password Login
-make login and register uniform
-register left learn more
+register left content
 add email and password empty kini
-passwords dont match
-for validation login and register
-x and y scroll dashboard
-
+disable auto complete
+form validation login and register
 Route protection
 
 

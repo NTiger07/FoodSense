@@ -1,11 +1,11 @@
 const mockData = [
   {
-    id: "japan",
+    id: "Wasted Food",
     color: "hsl(1, 70%, 50%)",
     data: [
       {
         x: "plane",
-        y: 199,
+        y: 20,
       },
       {
         x: "helicopter",
@@ -13,7 +13,7 @@ const mockData = [
       },
       {
         x: "boat",
-        y: 282,
+        y: 51,
       },
       {
         x: "train",
@@ -37,7 +37,7 @@ const mockData = [
       },
       {
         x: "bicycle",
-        y: 82,
+        y: 45,
       },
       {
         x: "horse",
@@ -49,7 +49,7 @@ const mockData = [
       },
       {
         x: "others",
-        y: 153,
+        y: 50,
       },
     ],
   },

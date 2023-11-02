@@ -1,10 +1,25 @@
+import axios from "axios";
+import { useState } from "react";
+
 const AnalyticsContainer = (props: any) => {
   const { userData } = props
+
+  const [inventoryList, setInventoryList] = useState([])
+  
   const storedTrashListJSON = localStorage.getItem("trashList");
   const storedTrashList = JSON.parse(storedTrashListJSON) || []
 
 
-
+  const getItems = () => {
+    axios
+      .get(`http://localhost:3000/items/all/${userData.id}`)
+      .then((res) => {
+        setInventoryList(res.data)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
 
   console.log(storedTrashList)
 

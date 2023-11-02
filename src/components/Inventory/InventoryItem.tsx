@@ -130,7 +130,7 @@ const InventoryItem = (props: any) => {
             <div className="flex flex-row items-center">
                 <div className="w-[30%] flex">
                     <div className="w-[20%] flex justify-center">
-                        {item[1].itemId}
+                        {Number(item[0] + 1)}
                     </div>
                     <div className="w-[80%]">
                         {item[1].itemName}

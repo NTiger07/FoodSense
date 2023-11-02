@@ -3,7 +3,8 @@ import AssistantContainer from "../../components/Assistant/AssistantContainer"
 import SideBar from "../../components/SideBar"
 import { useNavigate } from "react-router-dom"
 
-const Assistant = () => {
+const Assistant = (props: any) => {
+  const { userData } = props
   const navigate = useNavigate()
 
   const userDataLocal = localStorage.getItem('persist:foodsense')

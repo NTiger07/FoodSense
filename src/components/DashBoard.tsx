@@ -1,24 +1,5 @@
-import { useEffect, useState } from "react"
-
-type userDataType = {
-  email: string,
-  firstname: string,
-  lastname: string,
-  id: string
-}
-
-const DashBoard = () => {
-  const userDataLocal = localStorage.getItem('persist:foodsense')
-  const userDataLocalJSON = JSON.parse(userDataLocal)
-  const [userData, setUserData] = useState<userDataType>()
-
-  useEffect(() => {
-    getUser()
-  },[])
-
-  const getUser = () => {
-    setUserData(userDataLocalJSON)
-  }
+const DashBoard = (props: any) => {
+  const {userData} = props
 
   return (
     <div>Welcome {userData?.firstname} {userData?.lastname}</div>

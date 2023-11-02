@@ -9,6 +9,11 @@ register left learn more
 add email and password empty kini
 passwords dont match
 for validation login and register
-trim local storage
-userdata on pageload
 x and y scroll dashboard
+
+Route protection
+
+
+trash logic
+add item
+delete item api

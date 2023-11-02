@@ -1,4 +1,5 @@
-const AnalyticsContainer = () => {
+const AnalyticsContainer = (props: any) => {
+  const { userData } = props
   const storedTrashListJSON = localStorage.getItem("trashList");
   const storedTrashList = JSON.parse(storedTrashListJSON) || []
 

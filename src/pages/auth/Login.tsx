@@ -4,17 +4,16 @@ import { useEffect } from "react"
 
 const Login = () => {
     const navigate = useNavigate()
-    
+
     const userDataLocal = localStorage.getItem('persist:foodsense')
     const userDataLocalJSON = JSON.parse(userDataLocal)
 
 
-    useEffect(() => {
-        if (userDataLocalJSON.email) {
-            navigate("/dashboard")
-        }
-    }, [])
-    
+
+    // if (userDataLocalJSON.email) {
+    //     navigate("/dashboard")
+    // }
+
     return (
         <LoginContainer />
     )

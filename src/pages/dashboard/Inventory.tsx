@@ -3,7 +3,9 @@ import InventoryContainer from "../../components/Inventory/InventoryContainer"
 import SideBar from "../../components/SideBar"
 import { useNavigate } from "react-router-dom"
 
-const Inventory = () => {
+const Inventory = (props: any) => {
+  const { userData } = props
+
   const navigate = useNavigate()
 
   const userDataLocal = localStorage.getItem('persist:foodsense')
@@ -22,7 +24,7 @@ const Inventory = () => {
         <SideBar />
       </div>
       <div className="w-[95%]">
-        <InventoryContainer />
+        <InventoryContainer userData={userData}/>
       </div>
     </div>
   )

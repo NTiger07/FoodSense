@@ -4,13 +4,13 @@ import InventoryItem from "./InventoryItem"
 import ExpiryItem from "./ExpiryItem"
 import axios from "axios"
 
-const InventoryContainer = () => {
-  const userDataLocal = localStorage.getItem('persist:foodsense')
-  const userDataLocalJSON = JSON.parse(userDataLocal)
+const InventoryContainer = (props: any) => {
+  const { userData } = props
+
   useEffect(() => {
     getItems()
   }, [])
-  
+
   const [inventoryList, setInventoryList] = useState([])
   const [addInventory, setAddInventory] = useState(false)
 
@@ -29,7 +29,7 @@ const InventoryContainer = () => {
 
   const getItems = () => {
     axios
-      .get(`http://localhost:3000/items/all/${userDataLocalJSON.id.slice(1, 25)}`)
+      .get(`http://localhost:3000/items/all/${userData.id}`)
       .then((res) => {
         setInventoryList(res.data)
       })

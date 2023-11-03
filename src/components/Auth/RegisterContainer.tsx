@@ -69,17 +69,17 @@ const RegisterContainer = () => {
             </p>
             <div>
               <div className="grid grid-cols-2 gap-5">
-                <input type="text" placeholder="First name" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem]" onChange={(e) => setFirstname(e.target.value)} />
-                <input type="text" placeholder="Last name" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem]" onChange={(e) => setLastname(e.target.value)} />
+                <input type="text" placeholder="First name" className="text-light-black outline-none border-none rounded-[18px] py-[.5rem] px-[.6rem]" onChange={(e) => setFirstname(e.target.value)} />
+                <input type="text" placeholder="Last name" className="text-light-black outline-none border-none rounded-[18px] py-[.5rem] px-[.6rem]" onChange={(e) => setLastname(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="email" placeholder="Email" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" placeholder="Email" className="text-light-black outline-none border-none rounded-[18px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="password" placeholder="Password" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" placeholder="Password" className="text-light-black outline-none border-none rounded-[18px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setPassword(e.target.value)} />
               </div>
               <div className="mt-5">
-                <input type="password" placeholder="Confirm Password" className="text-light-black outline-none border-none rounded-[16px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setConfirmPassword(e.target.value)} />
+                <input type="password" placeholder="Confirm Password" className="text-light-black outline-none border-none rounded-[18px] py-[.5rem] px-[.6rem] w-full" onChange={(e) => setConfirmPassword(e.target.value)} />
               </div>
               {password == confirmPassword ? <></> : (<span className="ml-[15px] text-primary-red">Passwords don't match</span>)}
               <div className="mt-5">

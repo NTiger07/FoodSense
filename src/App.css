@@ -25,3 +25,9 @@ input:-webkit-autofill:active {
   box-shadow: 15px 30px 40px 5px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+
+.auth_container{
+  background-image: url("/images/lily-banse--unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

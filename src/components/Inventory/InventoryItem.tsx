@@ -139,8 +139,8 @@ const InventoryItem = (props: any) => {
                 <div className="flex items-center w-[70%]">
                     <div className="flex w-[20%] gap-[5%]">
                         {itemQuantity < 10 ? 0 : ""}{itemQuantity}
-                        <span className="cursor-pointer" onClick={() => { setItemQuantity(itemQuantity - 1 + 2); setSaveVisible(true) }}><img src="/assets/add.svg" alt="" /></span>
-                        <span className="cursor-pointer" onClick={() => { if (itemQuantity > 1) { setItemQuantity(itemQuantity - 1) } setSaveVisible(true) }}><img src="/assets/minus.svg" alt="" /></span>
+                        <span className="cursor-pointer" onClick={() => { setItemQuantity(itemQuantity - 1 + 2); setSaveVisible(true) }}><img src="/icons/add.svg" alt="" /></span>
+                        <span className="cursor-pointer" onClick={() => { if (itemQuantity > 1) { setItemQuantity(itemQuantity - 1) } setSaveVisible(true) }}><img src="/icons/minus.svg" alt="" /></span>
                     </div>
                     <div className="w-[20%]">
                         {moment(item[1].expiryDate).format('DD-MM-YYYY')}
@@ -152,12 +152,12 @@ const InventoryItem = (props: any) => {
                 </div>
                 {saveVisible && (<div className="absolute right-20 flex flex-row items-center cursor-pointer" onClick={updateItem}>
                     <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] pr-[.5rem] text-primary-red">
-                        <img className="relative w-[30px]" alt="" src="/assets/save.svg" />
+                        <img className="relative w-[30px]" alt="" src="/icons/save.svg" />
                         {/* <div className="relative font-semibold text-[#A05000]">Save changes</div> */}
                     </a>
                 </div>)}
                 <div className="absolute right-2 pr-[2rem] cursor-pointer" onClick={handleClickOpen}>
-                    <img src="/assets/delete-bin-line.svg" className="w-[30px]" alt="" />
+                    <img src="/icons/delete-bin-line.svg" className="w-[30px]" alt="" />
                 </div>
 
             </div>

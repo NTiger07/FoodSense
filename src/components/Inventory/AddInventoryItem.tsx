@@ -97,7 +97,7 @@ const AddInventoryItem = (props: any) => {
                     {/* <b className="relative text-base font-work-sans text-[#A05000] text-center">
                         Add 
                     </b> */}
-                    <img src="/assets/add.svg" alt="" />
+                    <img src="/icons/add.svg" alt="" />
                 </button>
             </div>
 

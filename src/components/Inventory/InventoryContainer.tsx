@@ -91,7 +91,7 @@ const InventoryContainer = (props: any) => {
 
           <div className="ADDSAVE bg-[#263238] flex py-[1rem] px-[2rem] justify-between">
             <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] text-primary-red">
-              <img className="relative w-6 h-6" alt="" src="/assets/add.svg" />
+              <img className="relative w-6 h-6" alt="" src="/icons/add.svg" />
               <div className="relative font-semibold text-[#A05000]" onClick={() => setAddInventory(!addInventory)}>Add Item</div>
             </a>
 

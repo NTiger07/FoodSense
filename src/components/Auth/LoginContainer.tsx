@@ -36,7 +36,7 @@ const LoginContainer = () => {
 
 
     return (
-        <div className="flex justify-center items-center min-h-screen overflow-y-hidden w-[100vw]">
+        <div className="auth_container flex justify-center items-center min-h-screen overflow-y-hidden w-[100vw]">
             <div className="bg-light-black rounded-lg p-8 shadow w-[30%] h-[60vh] overflow-y-hidden">
                 <h1 className="text-3xl text-center mb-6">Login</h1>
                 <div className="mb-6">
@@ -56,7 +56,7 @@ const LoginContainer = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <img src={`/assets/eye${visible ? "" : "-off"}-line.svg`} className="w-[7%] cursor-pointer" alt="" onClick={() => setVisible(!visible)} />
+                    <img src={`/icons/eye${visible ? "" : "-off"}-line.svg`} className="w-[7%] cursor-pointer" alt="" onClick={() => setVisible(!visible)} />
                 </div>
                 {/* <div className="flex justify-between text-sm mb-4">
                     <label className="flex items-center text-white">

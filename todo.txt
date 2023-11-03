@@ -1,10 +1,8 @@
 add images and tweak ui color to make it vibrant
 integrate google fonts
 update readme
-add sidebar fixed
 
 
-add background image for register and login
 form validation register asterisks
 Route protection
 

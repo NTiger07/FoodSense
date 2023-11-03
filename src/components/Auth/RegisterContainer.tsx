@@ -42,15 +42,15 @@ const RegisterContainer = () => {
 
 
   return (
-    <div className="min-h-screen flex items-center">
+    <div className="auth_container min-h-screen flex items-center">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-light-black rounded-xl mx-auto shadow-lg overflow-hidden">
+        <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 rounded-xl mx-auto shadow-lg overflow-hidden">
 
 
-          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-white">
-            <h1 className="text-black text-3xl mb-3 font-bold">Welcome</h1>
+          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-[#2b2a29e5]">
+            <h1 className="text-white text-3xl mb-3 font-bold">Welcome</h1>
             <div>
-              <p className="text-black font-semibold">
+              <p className="text-white font-semibold">
                 With FoodSense, you can effortlessly keep track of your food items,
                 monitor their shelf life, to ensure nothing goes to waste.
                 But that's not all – we take it a step further. Our app provides insightful visualizations,
@@ -62,7 +62,7 @@ const RegisterContainer = () => {
 
 
 
-          <div className="w-full lg:w-1/2 py-16 px-8">
+          <div className="bg-light-black w-full lg:w-1/2 py-16 px-8">
             <h2 className="text-3xl mb-4">Register</h2>
             <p className="mb-4">
               Create your account. It’s free and only takes a minute

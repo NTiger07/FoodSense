@@ -8,7 +8,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
-import { format, parseISO, subDays } from "date-fns";
+import { format, parse } from "date-fns";
 import { useEffect, useState } from "react";
 import mockData2 from "./mockData2";
 
@@ -39,31 +39,6 @@ const AnalyticsContainer = (props: any) => {
     Units: item.Units, 
   }));
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div className="h-[100vh] mx-[2%] mt-[2%] flex flex-col gap-2">
@@ -73,7 +48,7 @@ const AnalyticsContainer = (props: any) => {
 
       <div className="MAINSECTION h-[85vh] flex flex-col gap-7">
         <div className="MAINGRAPHS flex flex-row items-cente h-[60%] gap-4">
-          <div className="TRENDS w-[75%] h-[100%] bg-[#2e1c15] rounded-lg shadow-lg flex items-center">
+          <div className="TRENDS w-[100%] h-[100%] bg-[#2e1c15] rounded-lg shadow-lg flex items-center">
             <ResponsiveContainer width="100%" height="80%">
               <AreaChart data={sortedTransformedData}>
                 <defs>
@@ -88,13 +63,11 @@ const AnalyticsContainer = (props: any) => {
                 <XAxis
                   dataKey="date"
                   axisLine={false}
-                  tickLine={false}
+                  tickLine={true}
+                  interval={7}
                   tickFormatter={(str) => {
-                    const date = parseISO(str);
-                    if (date.getDate() % 7 === 0) {
-                      return format(date, "MMM, d");
-                    }
-                    return "";
+                    const formattedDate = parse(str, 'M/d/yyyy', new Date())
+                    return format(formattedDate, 'MMM d')
                   }}
                 />
 
@@ -112,7 +85,7 @@ const AnalyticsContainer = (props: any) => {
               </AreaChart>
             </ResponsiveContainer>
           </div>
-          <div className="TYPES_PIE w-[30%] h-[100%] bg-[#37474F] rounded-lg shadow-lg">Waste Type Pie</div>
+          {/* <div className="TYPES_PIE w-[30%] h-[100%] bg-[#37474F] rounded-lg shadow-lg">Waste Type Pie</div> */}
         </div>
 
 

@@ -11,3 +11,6 @@ Route protection
 trash logic
 add item
 delete item api
+
+work on chart styles color text etc
+add heading

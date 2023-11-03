@@ -57,6 +57,7 @@ Bar Chart or Donut Chart: Visualize the environmental impact metrics, such as re
 
 
 
+
 11. Interactive Features:
 Interactive Elements: Allow users to interact with the visualizations. For example, clicking on a chart element could show more detailed information about that specific data point.
 

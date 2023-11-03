@@ -5,7 +5,6 @@ update readme
 
 register left content
 add email and password empty kini
-disable auto complete
 form validation login and register
 Route protection
 

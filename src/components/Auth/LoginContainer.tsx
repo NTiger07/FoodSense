@@ -43,17 +43,16 @@ const LoginContainer = () => {
                     <input
                         type="text"
                         placeholder="Email"
-                        className="w-full h-12 outline-none border-none border-white rounded-full px-4 text-black"
+                        className="w-full h-12 outline-none border-none border-white bg-white rounded-full px-4 text-black"
                         onChange={(e) => setUsername(e.target.value)}
-                        autoComplete="false"
                         required
                     />
                 </div>
-                <div className="mb-[3rem] flex justify-between flex-row items-center w-full h-12 px-[1rem] rounded-full text-black bg-[#E8F0FE]">
+                <div className="mb-[3rem] flex justify-between flex-row items-center w-full h-12 px-[1rem] rounded-full text-black bg-white">
                     <input
                         type={visible ? "text" : "password"}
                         placeholder="Password"
-                        className="outline-none border-none px-4 w-[80%] h-[90%]"
+                        className="outline-none border-none px-4 w-[80%] h-[90%] bg-white"
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />

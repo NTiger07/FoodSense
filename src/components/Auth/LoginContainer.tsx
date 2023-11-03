@@ -36,7 +36,7 @@ const LoginContainer = () => {
 
 
     return (
-        <div className="flex justify-center items-center min-h-screen overflow-y-hidden">
+        <div className="flex justify-center items-center min-h-screen overflow-y-hidden w-[100vw]">
             <div className="bg-light-black rounded-lg p-8 shadow w-[30%] h-[60vh] overflow-y-hidden">
                 <h1 className="text-3xl text-center mb-6">Login</h1>
                 <div className="mb-6">

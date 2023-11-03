@@ -49,8 +49,7 @@ Bar Chart: Illustrate the user's progress in reducing food waste over time. Disp
 4. Environmental Impact:
 Bar Chart or Donut Chart: Visualize the environmental impact metrics, such as reduced carbon footprint and water usage, after reducing food waste. Each metric can have its dedicated chart.
 
-5. Daily, Weekly, or Monthly Summary:
-Stacked Bar Chart: Provide a stacked bar chart representing daily, weekly, or monthly summaries of wasted food items. Each day/week/month is a stack, and different colors represent different food types within that period.
+
 
 
 

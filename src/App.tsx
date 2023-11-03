@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
+import { useLocation } from 'react-router-dom';
 import DashBoard from './pages/dashboard/DashBoard'
 import Inventory from './pages/dashboard/Inventory';
 import Assistant from './pages/dashboard/Assistant';
@@ -11,6 +12,7 @@ import Register from './pages/auth/Register';
 import { Provider } from 'react-redux';
 import store1, { persistor } from "../src/redux/store"
 import { PersistGate } from 'redux-persist/es/integration/react';
+import SideBar from './components/SideBar';
 
 function App() {
   const userDataLocal = localStorage.getItem('persist:foodsense');
@@ -33,16 +35,21 @@ function App() {
   }
 
   const trimmedUserData = removeTrailers()
+  const location = useLocation()
+
 
 
   return (
     <Provider store={store1}>
       <PersistGate loading={null} persistor={persistor}>
-        <div className='relative w-[100vw] flex text-[#fff]'>
+        <div className='relative w-[100vw] flex text-[#fff] h-[100vh] overflow-hidden'>
           <div className='absolute'>
             <ToastContainer position='top-center' />
           </div>
-          <div className='w-[100%] h-[100vh] overflow-hidden bg-[#263238]'>
+          <div className={`${location.pathname == "/auth/login" || location.pathname == "/auth/register" ? "w-[0%]": "w-[5%]"}`}>
+            <SideBar />
+          </div>
+          <div className={`${location.pathname == "/auth/login" || location.pathname == "/auth/register" ? "w-[100%]" : "w-[95%]"} h-[100vh] overflow-x-hidden bg-[#263238]`}>
             <Routes>
               <Route path='/auth/login' element={<Login />} />
               <Route path='/auth/register' element={<Register />} />

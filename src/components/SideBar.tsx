@@ -16,7 +16,7 @@ const SideBar = () => {
     }
 
     return (
-        <div className={`relative bg-[#37474F] transition-all h-[100vh] w-[100%] flex flex-col shadow-xl overflow-clip pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`} onMouseEnter={() => setIsSideBarExpanded(true)} onMouseLeave={() => setIsSideBarExpanded(false)}>
+        <div className={`relative bg-[#37474F] transition-all h-[100] w-[100%] flex flex-col shadow-xl pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`} onMouseEnter={() => setIsSideBarExpanded(true)} onMouseLeave={() => setIsSideBarExpanded(false)}>
             <div className="w-full flex justify-center mb-[6rem] cursor-pointer" onClick={() => setIsSideBarExpanded(!isSidebarExpanded)}>
                 <img src="/assets/menu-white.svg" className="w-[1.8rem]" alt="" />
             </div>

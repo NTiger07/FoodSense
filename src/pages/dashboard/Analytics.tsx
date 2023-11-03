@@ -19,9 +19,9 @@ const Analytics = (props: any) => {
   
   return (
     <div className="h-[100%] flex flex-row w-[100vw]">
-      <div className="w-[5%]">
-        <SideBar />
-      </div>
+      <div className="w-[0%]">
+        {/* <SideBar /> */}
+      </div> 
       <div className="w-[95%]">
         <AnalyticsContainer userData={userData}/>
       </div>

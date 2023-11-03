@@ -1,6 +1,7 @@
 add images and tweak ui color to make it vibrant
 integrate google fonts
 update readme
+add sidebar fixed
 
 
 add background image for register and login
@@ -14,3 +15,5 @@ delete item api
 
 work on chart styles color text etc
 add heading
+
+data aggregation same date add values

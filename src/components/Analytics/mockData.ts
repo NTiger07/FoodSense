@@ -8,8 +8,8 @@ const mockData = [
         y: 20,
       },
       {
-        x: "helicopter",
-        y: 194,
+        x: "plane",
+        y: 44,
       },
       {
         x: "boat",

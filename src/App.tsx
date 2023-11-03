@@ -16,6 +16,7 @@ function App() {
   const userDataLocal = localStorage.getItem('persist:foodsense');
   const userDataLocalJSON = JSON.parse(userDataLocal);
 
+
   const removeTrailers = () => {
     const newObj = {};
     for (const key in userDataLocalJSON) {

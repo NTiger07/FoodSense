@@ -4,7 +4,7 @@ update readme
 
 
 add background image for register and login
-form validation register
+form validation register asterisks
 Route protection
 
 

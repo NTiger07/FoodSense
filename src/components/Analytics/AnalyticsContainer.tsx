@@ -21,17 +21,17 @@ const AnalyticsContainer = (props: any) => {
   }
 
   const [refinedData, setRefinedData] = useState([])
-  // useEffect(() => {
-  //   // Run when trash list changes
-  //   for (const item in trashList){
-  //     i
-  //   }
-  // },[trashList])
+  const transformedData = trashList.map(item => ({
+    x: new Date(item.createdAt).toLocaleDateString(), // Format createdAt as X (date)
+    y: item.units, // Use units as Y
+  }));
+  
+  console.log(transformedData)
 
   const chartData = [{
     id: "Wasted Food",
     color: "hsl(1, 70%, 50%)",
-    data: refinedData
+    data: transformedData
   }]
 
 
@@ -59,7 +59,7 @@ const AnalyticsContainer = (props: any) => {
           <div className="TRENDS w-[75%] h-[100%] bg-[#fff] rounded-lg shadow-lg">
             <ResponsiveLine
               data={mockData}
-              margin={{ top: 15, right: 30, bottom: 50, left: 60 }}
+              margin={{ top: 25, right: 30, bottom: 50, left: 60 }}
               xScale={{ type: 'point' }}
               yScale={{
                 type: 'linear',

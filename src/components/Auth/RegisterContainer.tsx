@@ -8,7 +8,7 @@ import { setUser } from "../../redux/userSlice.js"
 const RegisterContainer = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  
+
   const [firstname, setFirstname] = useState("")
   const [lastname, setLastname] = useState("")
   const [email, setEmail] = useState("")
@@ -47,10 +47,16 @@ const RegisterContainer = () => {
         <div className="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-light-black rounded-xl mx-auto shadow-lg overflow-hidden">
 
 
-          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-primary">
-            <h1 className="text-black text-3xl mb-3">Welcome</h1>
+          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-white">
+            <h1 className="text-black text-3xl mb-3 font-bold">Welcome</h1>
             <div>
-              <p className="text-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suspendisse aliquam varius rutrum purus maecenas ac</p>
+              <p className="text-black font-semibold">
+                With FoodSense, you can effortlessly keep track of your food items,
+                monitor their shelf life, to ensure nothing goes to waste.
+                But that's not all – we take it a step further. Our app provides insightful visualizations,
+                allowing you to see the bigger picture.
+                Witness the positive change you're making and get inspired to do even more.
+              </p>
             </div>
           </div>
 

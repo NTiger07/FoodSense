@@ -67,7 +67,7 @@ const LoginContainer = () => {
                 </div> */}
                 <button
                     onClick={authenticateUser}
-                    className={`w-full h-12 bg-white text-black rounded-full font-semibold hover:bg-opacity-90 transition duration-300 cursor-not-allowed ${password !== "" ? "cursor-not-allowed" : ""}`}
+                    className={`w-full h-12 bg-white text-black rounded-full font-semibold hover:bg-opacity-90 transition duration-300 cursor-not-allowed ${password == "" || username == "" ? "cursor-not-allowed" : "cursor-pointer"}`}
                 >
                     Login
                 </button>

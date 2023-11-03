@@ -3,9 +3,8 @@ integrate google fonts
 update readme
 
 
-register left content
-add email and password empty kini
-form validation login and register
+add background image for register and login
+form validation register
 Route protection
 
 

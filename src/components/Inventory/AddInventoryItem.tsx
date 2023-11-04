@@ -4,21 +4,33 @@ import dayjs from "dayjs";
 import { useState } from "react"
 import { toast } from "react-toastify";
 
-const AddInventoryItem = () => {
 
+type ItemType = {
+    name: string, 
+    quantity: number,
+    grams: number,
+    expiryDate: Date | string,
+    notes: string
+}
+
+const AddInventoryItem = () => {
     const handleExpiryDateChange = (time) => {
-        setExpiryDate(dayjs(time, 'DD-MM-YYYY').format('DD-MM-YYYY'))
+        setNewItem({...newItem, expiryDate: dayjs(time, 'DD-MM-YYYY').format('DD-MM-YYYY')})
     }
 
-    const [name, setName] = useState("")
-    const [quantity, setQuantity] = useState("")
-    const [expiryDate, setExpiryDate] = useState("")
-    const [notes, setNotes] = useState("")
+    const [newItem, setNewItem] = useState<ItemType>({
+        name: "",
+        quantity: 0,
+        grams: 0,
+        expiryDate: "",
+        notes: ""
+    })
+
 
     //From validation with add button
-
     const addItem = () => {
         console.log("Item Added")
+        toast.info("New Item Added")
     }
 
     return (
@@ -26,13 +38,12 @@ const AddInventoryItem = () => {
             <div className="flex flex-col h-[5rem] w-[95%] gap-2">
                 <div className="flex flex-row w-full justify-between px-[1rem] py-[1rem] items-center gap-4">
                     <div className="NAME flex w-[50%] mb-0 flex-col items-start justify-center">
-                        {/* <div className="relative font-medium mb-[5%] text-[#f9f9f9]">Name</div> */}
                         <input
                             className="outline-none h-[3rem] w-[100%] bg-whites-plain rounded-6xs box-border flex flex-row py-[5%] pr-0 pl-[6%] items-start justify-start border-[1px] border-solid border-greys-etherium"
                             type="text"
-                            defaultValue={name}
+                            defaultValue={newItem.name}
                             placeholder="Name"
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => setNewItem({...newItem, name:e.target.value})}
                             required
                         />
                     </div>
@@ -41,7 +52,7 @@ const AddInventoryItem = () => {
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                                 <DatePicker
                                     label="Expiry Date"
-                                    value={dayjs(expiryDate)}
+                                    value={dayjs(newItem.expiryDate)}
                                     onChange={handleExpiryDateChange}
                                     format="DD-MM-YYYY"
                                 />
@@ -60,8 +71,8 @@ const AddInventoryItem = () => {
                                 className="outline-none h-[3rem] w-full bg-whites-plain rounded-6xs box-border flex flex-row py-[5%] pr-0 pl-[6%] items-start justify-start border-[1px] border-solid border-greys-etherium"
                                 type="number"
                                 placeholder="Units"
-                                defaultValue={quantity}
-                                onChange={(e) => setQuantity(e.target.value)}
+                                defaultValue={newItem.quantity}
+                                onChange={(e) => setNewItem({ ...newItem, quantity: Number(e.target.value) })}
                                 required
                             />
                         </div>
@@ -74,8 +85,8 @@ const AddInventoryItem = () => {
                                 className="outline-none h-[3rem] w-full bg-whites-plain rounded-6xs box-border flex flex-row py-[5%] pr-0 pl-[6%] items-start justify-start border-[1px] border-solid border-greys-etherium"
                                 type="number"
                                 placeholder="Grams per unit"
-                                defaultValue={quantity}
-                                onChange={(e) => setQuantity(e.target.value)}
+                                defaultValue={newItem.grams}
+                                onChange={(e) => setNewItem({ ...newItem, grams: Number(e.target.value) })}
                                 required
                             />
                         </div>
@@ -90,8 +101,8 @@ const AddInventoryItem = () => {
                             <textarea
                                 className="outline-none min-h-[3rem] h-[3rem] max-h-[5rem] w-full bg-whites-plain rounded-6xs box-border flex flex-row pt-[2.2%] pr-0 pl-[6%] items-start justify-start border-[1px] border-solid border-greys-etherium"
                                 placeholder="Add Notes"
-                                defaultValue={notes}
-                                onChange={(e) => setNotes(e.target.value)}
+                                defaultValue={newItem.notes}
+                                onChange={(e) => setNewItem({ ...newItem, notes: e.target.value })}
                                 required
                             />
                         </div>

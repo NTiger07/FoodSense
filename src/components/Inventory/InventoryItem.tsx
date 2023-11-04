@@ -24,10 +24,10 @@ const InventoryItem = (props: any) => {
 
     const { item, setInventoryList } = props
     const setBackdropStyle = useMemo(() => {
-        if (item[1].id % 2 == 0) {  // even number
-            return { backgroundColor: "#37474F", };
+        if (item[0] % 2 == 0) {  // even number
+            return { backgroundColor: "#263238", };
         }
-        return { backgroundColor: "#263238", };
+        return { backgroundColor: "#37474F", };
     }, [item]);
 
     const [itemQuantity, setItemQuantity] = useState(item[1].quantity as number)
@@ -130,7 +130,7 @@ const InventoryItem = (props: any) => {
             <div className="flex flex-row items-center">
                 <div className="w-[30%] flex">
                     <div className="w-[20%] flex justify-center">
-                        {Number(item[0] + 1)}
+                        {Number(item[0]) + 1 }
                     </div>
                     <div className="w-[80%]">
                         {item[1].itemName}

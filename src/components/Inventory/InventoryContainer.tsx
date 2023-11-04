@@ -21,11 +21,12 @@ const InventoryContainer = (props: any) => {
     )
   })
 
-  const expiryDates = Object.entries(inventoryList).map((item) => {
-    return (
-      <ExpiryItem item={item} />
-    )
-  })
+  const expiryDates = Object.entries(inventoryList)
+    .sort((a, b) => new Date(a[1].expiryDate) - new Date(b[1].expiryDate))
+    .slice(0, 7)
+    .map((item) => {
+      return <ExpiryItem item={item} />;
+    });
 
   const getItems = () => {
     axios
@@ -82,7 +83,6 @@ const InventoryContainer = (props: any) => {
           </div>
 
           <div className="bg-[#263238] pt-[7%]">
-
             {addInventory && <AddInventoryItem inventoryList={inventoryList} setInventoryList={setInventoryList} setAddInventory={setAddInventory} />}
           </div>
 
@@ -94,8 +94,6 @@ const InventoryContainer = (props: any) => {
               <img className="relative w-6 h-6" alt="" src="/icons/add.svg" />
               <div className="relative font-semibold text-[#A05000]" onClick={() => setAddInventory(!addInventory)}>Add Item</div>
             </a>
-
-
           </div>
         </div>
 

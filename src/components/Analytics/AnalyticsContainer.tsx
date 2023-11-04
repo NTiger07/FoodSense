@@ -38,7 +38,7 @@ const AnalyticsContainer = (props: any) => {
 
         <div className="h-[40vh] gap-4 flex items-center mb-[2rem]">
           <Progress data={mockData2} />
-          <Impact />
+          <Impact data={mockData2}/>
           {/* <div className="MONTHLY SUMMARY w-[33%] rounded-lg shadow-lg bg-[#37474F] h-[100%]"></div> */}
         </div>
 

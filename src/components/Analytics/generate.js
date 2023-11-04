@@ -14,7 +14,6 @@ const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
 const generatedData = Array.from({ length: 100 }, (_, index) => {
   const units = getRandomInt(5, 50);
   const createdAt = generateRandomDate(startOfYear, currentDate).toISOString();
-//   const id = 
 
   return {
     _id: `${index + 1}`,
@@ -34,4 +33,5 @@ const generatedData = Array.from({ length: 100 }, (_, index) => {
 });
 
 console.log(generatedData);
+
 

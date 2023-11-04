@@ -47,7 +47,7 @@ const InventoryContainer = (props: any) => {
       <Dialog
         open={addInventory}
         fullWidth
-        maxWidth="md"
+        maxWidth="sm"
         onClose={() => setAddInventory(false)}
         aria-labelledby="alert-dialog-title"
       >

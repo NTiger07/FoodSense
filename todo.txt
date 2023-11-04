@@ -1,5 +1,5 @@
 add images and tweak ui color to make it vibrant
-integrate google fonts
+assistant sidebar google icon
 update readme
 
 
@@ -15,3 +15,32 @@ work on chart styles color text etc
 add heading
 
 data aggregation same date add values
+
+Carbon footprint (kg CO2e) = Total grams of food wasted * Emission factor (kg CO2e/g)  4.5kg
+
+
+
+
+
+const EMISSION_FACTOR = 4.5; // kg CO2e/kg of food
+
+// Function to calculate carbon footprint
+function calculateCarbonFootprint(initialWastedFood, reducedWastedFood) {
+    // Calculate initial carbon footprint
+    const initialCarbonFootprint = initialWastedFood * EMISSION_FACTOR;
+
+    // Calculate reduced carbon footprint
+    const reducedCarbonFootprint = reducedWastedFood * EMISSION_FACTOR;
+
+    // Calculate carbon footprint reduction
+    const carbonFootprintReduction = initialCarbonFootprint - reducedCarbonFootprint;
+
+    return carbonFootprintReduction;
+}
+
+// Example usage
+const initialWastedFood = 10; // kg
+const reducedWastedFood = 5; // kg
+
+const reduction = calculateCarbonFootprint(initialWastedFood, reducedWastedFood);
+console.log(`Carbon Footprint Reduction: ${reduction} kg CO2e`);

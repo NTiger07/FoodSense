@@ -10,6 +10,7 @@ const AnalyticsContainer = (props: any) => {
   useEffect(() => {
     getItems()
   }, [])
+
   const getItems = () => {
     axios
       .get(`http://localhost:3000/trash/all/${userData.id}`)

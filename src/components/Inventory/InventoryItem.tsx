@@ -157,7 +157,7 @@ const InventoryItem = (props: any) => {
                     </a>
                 </div>)}
                 <div className="absolute right-2 pr-[.3rem] cursor-pointer" onClick={handleClickOpen}>
-                    <img src="/icons/delete-bin-line.svg" className="w-[30px]" alt="" />
+                    <img src="/icons/delete-google.svg" className="w-[30px]" alt="" />
                 </div>
 
             </div>

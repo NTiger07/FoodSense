@@ -82,6 +82,7 @@ export const theme = {
       "work-sans": "'Work Sans'",
       poppins: "Poppins",
       inter: "Inter",
+      lexend: "Lexend_Deca",
     },
     borderRadius: {
       "3xs": "10px",

@@ -42,7 +42,7 @@ function App() {
   return (
     <Provider store={store1}>
       <PersistGate loading={null} persistor={persistor}>
-        <div className='relative w-[100vw] flex text-[#fff] h-[100vh] overflow-hidden'>
+        <div className='relative w-[100vw] flex text-[#fff] h-[100vh] overflow-hidden font-lexend'>
           <div className='absolute'>
             <ToastContainer position='top-center' />
           </div>

@@ -1,5 +1,5 @@
 import { format, parse } from "date-fns";
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const Progress = (props: any) => {
     const { data } = props
@@ -28,7 +28,7 @@ const Progress = (props: any) => {
 
     const sortedTransformedData = transformedData.map(item => ({
         date: item.date.toLocaleDateString(),
-        Units: item.progress,
+        Progress: item.progress,
     }));
 
 
@@ -48,13 +48,13 @@ const Progress = (props: any) => {
                         }}
                     />
                     <YAxis
-                        dataKey="Units"
+                        dataKey="Progress"
                         axisLine={false}
                         tickLine={false}
                     />
                     <Tooltip contentStyle={{ backgroundColor: "black", borderRadius: "10px" }} />
                     {/* <Legend /> */}
-                    <Bar dataKey="Units" fill="#8884d8" />
+                    <Bar dataKey="Progress" fill="#8884d8" />
                 </BarChart>
             </ResponsiveContainer>
 

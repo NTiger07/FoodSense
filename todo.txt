@@ -3,13 +3,13 @@ assistant sidebar google icon
 update readme
 
 
-form validation register asterisks
+form validation register asterisks additem login
 Route protection
 
 
 trash logic
-add item
 delete item api
+edit
 
 work on chart styles color text etc
 add heading

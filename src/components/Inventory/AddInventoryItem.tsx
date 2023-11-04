@@ -1,36 +1,57 @@
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers"
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
+import axios from "axios";
 import dayjs from "dayjs";
 import { useState } from "react"
 import { toast } from "react-toastify";
 
 
 type ItemType = {
-    name: string, 
-    quantity: number,
-    grams: number,
+    name: string,
+    quantity: number | string,
+    grams: number | string,
     expiryDate: Date | string,
     notes: string
 }
 
-const AddInventoryItem = () => {
+const AddInventoryItem = (props: any) => {
+    const {userData, setAddInventory, getItems} = props
+
     const handleExpiryDateChange = (time) => {
-        setNewItem({...newItem, expiryDate: dayjs(time, 'DD-MM-YYYY').format('DD-MM-YYYY')})
+        setNewItem({ ...newItem, expiryDate: dayjs(time, 'DD-MM-YYYY').format('DD-MM-YYYY') })
     }
 
     const [newItem, setNewItem] = useState<ItemType>({
         name: "",
-        quantity: 0,
-        grams: 0,
+        quantity: "",
+        grams: "",
         expiryDate: "",
         notes: ""
     })
 
+    const newItemObject = {
+        itemName: newItem.name,
+        units: newItem.quantity,
+        gramsPerUnit: newItem.grams,
+        expiryDate: newItem.expiryDate,
+        itemNotes: newItem.notes,
+    }
+
 
     //From validation with add button
     const addItem = () => {
-        console.log("Item Added")
-        toast.info("New Item Added")
+        axios
+            .post(`http://localhost:3000/items/${userData.id}`, newItemObject)
+            .then(() => {
+                console.log("Item Added")
+                toast.info("New Item Added")
+                setAddInventory(false)
+                getItems()
+            })
+            .catch((err) => {
+                console.error(err)
+            })
+
     }
 
     return (
@@ -43,7 +64,7 @@ const AddInventoryItem = () => {
                             type="text"
                             defaultValue={newItem.name}
                             placeholder="Name"
-                            onChange={(e) => setNewItem({...newItem, name:e.target.value})}
+                            onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
                             required
                         />
                     </div>
@@ -109,10 +130,9 @@ const AddInventoryItem = () => {
 
                     </div>
 
-                    <div className="w-[20%] ml-[.7rem] flex justify-center h-full items-center">
+                    <div className="w-[20%] ml-[.7rem] flex justify-center h-full items-center" onClick={addItem}>
                         <button
                             className="cursor-pointer bg-[transparent] h-[3rem] w-[100%] rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-[#A05000]"
-                            onClick={addItem}
                         >
                             <img src="/icons/add.svg" alt="" />
                             <b className="relative text-base font-work-sans text-[#A05000] text-center">

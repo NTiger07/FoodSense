@@ -55,7 +55,7 @@ const InventoryContainer = (props: any) => {
           {"Add item"}
         </DialogTitle>
         <DialogContent style={{height: '50vh'}}>
-          <AddInventoryItem/>
+          <AddInventoryItem userData={userData} setAddInventory={setAddInventory} getItems={getItems}/>
         </DialogContent>
       </Dialog>
       <div className="SEARCH">
@@ -68,7 +68,7 @@ const InventoryContainer = (props: any) => {
 
 
 
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between pb-[2%]">
 
         <div className="ITEMS flex flex-col h-fit w-[65%] bg-[#37474F]">
 

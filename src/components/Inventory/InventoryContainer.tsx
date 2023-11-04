@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 import AddInventoryItem from "./AddInventoryItem"
 import InventoryItem from "./InventoryItem"
 import ExpiryItem from "./ExpiryItem"
@@ -41,6 +44,20 @@ const InventoryContainer = (props: any) => {
 
   return (
     <div className="h-[100vh] mx-[2%] mt-[2%]">
+      <Dialog
+        open={addInventory}
+        fullWidth
+        maxWidth="md"
+        onClose={() => setAddInventory(false)}
+        aria-labelledby="alert-dialog-title"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Add item"}
+        </DialogTitle>
+        <DialogContent style={{height: '50vh'}}>
+          <AddInventoryItem/>
+        </DialogContent>
+      </Dialog>
       <div className="SEARCH">
         Search and account
       </div>
@@ -69,30 +86,19 @@ const InventoryContainer = (props: any) => {
             </div>
 
             <div className="REST flex flex-row items-center w-[70%]">
-              <div className="w-[20%]">Units</div>
+              <div className="w-[30%]">Units (Grams/Unit)</div>
               <div className="w-[20%]">Expiry Date</div>
-              <div className="w-[60%]">Notes</div>
+              <div className="w-[50%]">Notes</div>
             </div>
 
           </div>
-
-
-
           <div className="flex flex-col">
             {InventoryItems}
           </div>
-
-          <div className="bg-[#263238] pt-[7%]">
-            {addInventory && <AddInventoryItem inventoryList={inventoryList} setInventoryList={setInventoryList} setAddInventory={setAddInventory} />}
-          </div>
-
-
-
-
-          <div className="ADDSAVE bg-[#263238] flex py-[1rem] px-[2rem] justify-between">
-            <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] text-primary-red">
+          <div className="ADDSAVE bg-white rounded-lg flex py-[1rem] px-[2rem] justify-between absolute right-9 bottom-5 cursor-pointer" onClick={() => setAddInventory(!addInventory)}>
+            <a className="[text-decoration:none] w-fit flex flex-row items-center justify-start gap-[4px] text-primary-red">
               <img className="relative w-6 h-6" alt="" src="/icons/add.svg" />
-              <div className="relative font-semibold text-[#A05000]" onClick={() => setAddInventory(!addInventory)}>Add Item</div>
+              <div className="relative font-semibold text-[#A05000]">Add Item</div>
             </a>
           </div>
         </div>

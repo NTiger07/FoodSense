@@ -30,7 +30,7 @@ const InventoryItem = (props: any) => {
         return { backgroundColor: "#37474F", };
     }, [item]);
 
-    const [itemQuantity, setItemQuantity] = useState(item[1].quantity as number)
+    const [itemQuantity, setItemQuantity] = useState(item[1].units as number)
     const [itemNotes, setItemNotes] = useState(item[1].notes)
     const [saveVisible, setSaveVisible] = useState(false)
 
@@ -137,26 +137,26 @@ const InventoryItem = (props: any) => {
                     </div>
                 </div>
                 <div className="flex items-center w-[70%]">
-                    <div className="flex w-[20%] gap-[5%]">
-                        {itemQuantity < 10 ? 0 : ""}{itemQuantity}
+                    <div className="flex w-[30%] gap-[5%]">
+                        {itemQuantity < 10 ? 0 : ""}{itemQuantity} ({item[1].gramsPerUnit})
                         <span className="cursor-pointer" onClick={() => { setItemQuantity(itemQuantity - 1 + 2); setSaveVisible(true) }}><img src="/icons/add.svg" alt="" /></span>
                         <span className="cursor-pointer" onClick={() => { if (itemQuantity > 1) { setItemQuantity(itemQuantity - 1) } setSaveVisible(true) }}><img src="/icons/minus.svg" alt="" /></span>
                     </div>
                     <div className="w-[20%]">
                         {moment(item[1].expiryDate).format('DD-MM-YYYY')}
                     </div>
-                    <div className="w-[60%]">
+                    <div className="w-[50%]">
                         {/* {item[1].notes} */}
                         <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => {setSaveVisible(true); setItemNotes(e.target.value)}}/>
                     </div>
                 </div>
-                {saveVisible && (<div className="absolute right-20 flex flex-row items-center cursor-pointer" onClick={updateItem}>
+                {saveVisible && (<div className="absolute right-10 flex flex-row items-center cursor-pointer" onClick={updateItem}>
                     <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] pr-[.5rem] text-primary-red">
                         <img className="relative w-[30px]" alt="" src="/icons/save.svg" />
                         {/* <div className="relative font-semibold text-[#A05000]">Save changes</div> */}
                     </a>
                 </div>)}
-                <div className="absolute right-2 pr-[2rem] cursor-pointer" onClick={handleClickOpen}>
+                <div className="absolute right-2 pr-[.3rem] cursor-pointer" onClick={handleClickOpen}>
                     <img src="/icons/delete-bin-line.svg" className="w-[30px]" alt="" />
                 </div>
 

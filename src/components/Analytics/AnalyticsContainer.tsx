@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import mockData2 from "./mockData2";
 import WasteTrends from "./WasteTrends";
 import Progress from "./Progress";
 import Impact from "./Impact";

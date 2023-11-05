@@ -18,18 +18,13 @@ const InventoryContainer = (props: any) => {
   const [addInventory, setAddInventory] = useState(false)
 
 
-  const InventoryItems = Object.entries(inventoryList).map((item) => {
-    return (
-      <InventoryItem item={item} setInventoryList={setInventoryList} />
-    )
-  })
-
+  
   const expiryDates = Object.entries(inventoryList)
-    .sort((a, b) => new Date(a[1].expiryDate) - new Date(b[1].expiryDate))
-    .slice(0, 7)
-    .map((item) => {
-      return <ExpiryItem item={item} />;
-    });
+  .sort((a, b) => new Date(a[1].expiryDate) - new Date(b[1].expiryDate))
+  .slice(0, 7)
+  .map((item) => {
+    return <ExpiryItem item={item} />;
+  });
 
   const getItems = () => {
     axios
@@ -40,7 +35,13 @@ const InventoryContainer = (props: any) => {
       .catch((err) => {
         console.error(err)
       })
-  }
+    }
+    
+    const InventoryItems = Object.entries(inventoryList).map((item) => {
+      return (
+        <InventoryItem item={item} setInventoryList={setInventoryList} getItems={getItems} />
+      )
+    })
 
   return (
     <div className="h-[100vh] mx-[2%] mt-[2%]">

@@ -8,9 +8,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import moment from "moment";
+import axios from "axios";
 
 
 const InventoryItem = (props: any) => {
+    const { item, setInventoryList, getItems } = props
+
     const [open, setOpen] = useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -22,7 +25,6 @@ const InventoryItem = (props: any) => {
 
 
 
-    const { item, setInventoryList } = props
     const setBackdropStyle = useMemo(() => {
         if (item[0] % 2 == 0) {  // even number
             return { backgroundColor: "#263238", };
@@ -64,16 +66,16 @@ const InventoryItem = (props: any) => {
     }
 
     const removeItem = () => {
-        const storedInventoryList = JSON.parse(localStorage.getItem("inventoryList") || "[]");
-        const itemIndex = storedInventoryList.findIndex((storedItem) => storedItem.id === item[1].id);
-        if (itemIndex !== -1) {
-            storedInventoryList.splice(itemIndex, 1);
-            localStorage.setItem("inventoryList", JSON.stringify(storedInventoryList));
-        }
-
-        setInventoryList(storedInventoryList);
-        handleClose()
-        toast.info("Item removed")
+        axios.delete(`http://localhost:3000/items/${item[1]._id}`)
+        .then(() => {
+            toast.info("Item removed")
+            handleClose()
+            getItems()
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+        
     };
 
     const trashItem = () => {

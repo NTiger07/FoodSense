@@ -39,7 +39,7 @@ const InventoryContainer = (props: any) => {
     
     const InventoryItems = Object.entries(inventoryList).map((item) => {
       return (
-        <InventoryItem item={item} setInventoryList={setInventoryList} getItems={getItems} />
+        <InventoryItem item={item} getItems={getItems} />
       )
     })
 

@@ -10,9 +10,13 @@ import DialogTitle from '@mui/material/DialogTitle';
 import moment from "moment";
 import axios from "axios";
 
+type ItemDataType = {
+    units: number | string,
+    itemNotes: string
+}
 
 const InventoryItem = (props: any) => {
-    const { item, setInventoryList, getItems } = props
+    const { item, getItems } = props
 
     const [open, setOpen] = useState(false);
 
@@ -24,50 +28,30 @@ const InventoryItem = (props: any) => {
         return { backgroundColor: "#37474F", };
     }, [item]);
 
-    const [itemQuantity, setItemQuantity] = useState(item[1].units as number)
-    const [itemNotes, setItemNotes] = useState(item[1].notes)
     const [saveVisible, setSaveVisible] = useState(false)
 
+    const [itemData, setItemData] = useState<ItemDataType>({
+        units: item[1].units as number,
+        itemNotes: item[1].notes
+    })
 
-    const updateQuantity = () => {
-        const storedInventoryList = JSON.parse(localStorage.getItem("inventoryList") || "[]");
-        const itemIndex = storedInventoryList.findIndex((storedItem) => storedItem.id === item[1].id);
-        if (itemIndex !== -1) {
-            storedInventoryList[itemIndex].quantity = itemQuantity;
-            localStorage.setItem("inventoryList", JSON.stringify(storedInventoryList));
-        }
-        setItemQuantity(itemQuantity);
-        setSaveVisible(false)
-    }
-
-    const updateNotes = () => {
-        const storedInventoryList = JSON.parse(localStorage.getItem("inventoryList") || "[]");
-        const itemIndex = storedInventoryList.findIndex((storedItem) => storedItem.id === item[1].id);
-        if (itemIndex !== -1) {
-            storedInventoryList[itemIndex].notes = itemNotes;
-            localStorage.setItem("inventoryList", JSON.stringify(storedInventoryList));
-        }
-        setItemNotes(itemNotes);
-        setSaveVisible(false)
-    }
 
     const updateItem = () => {
-        updateQuantity()
-        updateNotes()
+        console.log("Item Updated")
         toast.info("Inventory Updated")
     }
 
     const removeItem = () => {
         axios.delete(`http://localhost:3000/items/${item[1]._id}`)
-        .then(() => {
-            toast.info("Item removed")
-            setOpen(false)
-            getItems()
-        })
-        .catch((err) => {
-            console.error(err)
-        })
-        
+            .then(() => {
+                toast.info("Item removed")
+                setOpen(false)
+                getItems()
+            })
+            .catch((err) => {
+                console.error(err)
+            })
+
     };
 
     const trashItem = () => {
@@ -111,7 +95,7 @@ const InventoryItem = (props: any) => {
             <div className="flex flex-row items-center">
                 <div className="w-[30%] flex">
                     <div className="w-[20%] flex justify-center">
-                        {Number(item[0]) + 1 }
+                        {Number(item[0]) + 1}
                     </div>
                     <div className="w-[80%]">
                         {item[1].itemName}
@@ -128,7 +112,7 @@ const InventoryItem = (props: any) => {
                     </div>
                     <div className="w-[50%]">
                         {/* {item[1].notes} */}
-                        <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => {setSaveVisible(true); setItemNotes(e.target.value)}}/>
+                        <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => { setSaveVisible(true); setItemData({...itemData, itemNotes: e.target.value}) }} />
                     </div>
                 </div>
                 {saveVisible && (<div className="absolute right-10 flex flex-row items-center cursor-pointer" onClick={updateItem}>

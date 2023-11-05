@@ -7,8 +7,6 @@ form validation register asterisks additem login
 Route protection
 
 
-trash logic
-delete item api
 edit
 
 work on chart styles color text etc

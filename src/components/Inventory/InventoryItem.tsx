@@ -15,14 +15,6 @@ const InventoryItem = (props: any) => {
     const { item, setInventoryList, getItems } = props
 
     const [open, setOpen] = useState(false);
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
 
 
     const setBackdropStyle = useMemo(() => {
@@ -69,7 +61,7 @@ const InventoryItem = (props: any) => {
         axios.delete(`http://localhost:3000/items/${item[1]._id}`)
         .then(() => {
             toast.info("Item removed")
-            handleClose()
+            setOpen(false)
             getItems()
         })
         .catch((err) => {
@@ -79,28 +71,15 @@ const InventoryItem = (props: any) => {
     };
 
     const trashItem = () => {
-        const storedInventoryListJSON = localStorage.getItem("inventoryList");
-        const storedInventoryList = JSON.parse(storedInventoryListJSON) || [];
-
-        const storedTrashListJSON = localStorage.getItem("trashList");
-        const storedTrashList = JSON.parse(storedTrashListJSON) || [];
-
-        const itemIndex = storedInventoryList.findIndex((storedItem) => storedItem.id === item[1].id);
-
-        if (itemIndex !== -1) {
-            const trashedItem = storedInventoryList.splice(itemIndex, 1)[0];
-            storedTrashList.push(trashedItem);
-
-            // Update local storage for both lists
-            localStorage.setItem("inventoryList", JSON.stringify(storedInventoryList));
-            localStorage.setItem("trashList", JSON.stringify(storedTrashList));
-
-            setInventoryList(storedInventoryList);
-        }
-
-        handleClose();
-        toast.info("Item trashed");
-
+        axios.post(`http://localhost:3000/items/trash/${item[1]._id}`)
+            .then(() => {
+                toast.info("Item Trashed")
+                setOpen(false)
+                getItems()
+            })
+            .catch((err) => {
+                console.error(err)
+            })
     }
 
 
@@ -110,7 +89,7 @@ const InventoryItem = (props: any) => {
         <div className="relative py-[2%] text-[#F9F9F9]" style={setBackdropStyle}>
             <Dialog
                 open={open}
-                onClose={handleClose}
+                onClose={() => setOpen(false)}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
@@ -158,7 +137,7 @@ const InventoryItem = (props: any) => {
                         {/* <div className="relative font-semibold text-[#A05000]">Save changes</div> */}
                     </a>
                 </div>)}
-                <div className="absolute right-2 pr-[.3rem] cursor-pointer" onClick={handleClickOpen}>
+                <div className="absolute right-2 pr-[.3rem] cursor-pointer" onClick={() => setOpen(true)}>
                     <img src="/icons/delete-google.svg" className="w-[30px]" alt="" />
                 </div>
 

@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
 import DashBoard from './pages/dashboard/DashBoard'
@@ -13,8 +13,10 @@ import { Provider } from 'react-redux';
 import store1, { persistor } from "../src/redux/store"
 import { PersistGate } from 'redux-persist/es/integration/react';
 import SideBar from './components/SideBar';
+import { useEffect } from 'react';
 
 function App() {
+  const navigate = useNavigate()
   const userDataLocal = localStorage.getItem('persist:foodsense');
   const userDataLocalJSON = JSON.parse(userDataLocal);
 
@@ -36,6 +38,12 @@ function App() {
 
   const trimmedUserData = removeTrailers()
   const location = useLocation()
+
+  useEffect(() => {
+    if (trimmedUserData.email == null){
+      navigate("/auth/login")
+    }
+  }, [])
 
 
 

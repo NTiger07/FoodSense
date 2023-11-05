@@ -37,8 +37,22 @@ const InventoryItem = (props: any) => {
 
 
     const updateItem = () => {
-        console.log("Item Updated")
-        toast.info("Inventory Updated")
+        const newItemData = {
+            units: itemData.units,
+            itemNotes: itemData.itemNotes
+        }
+
+        axios
+            .put(`http://localhost:3000/items/${item[1]._id}`, newItemData)
+            .then(() => {
+                toast.info("Inventory Updated")
+                setSaveVisible(false)
+                getItems()
+            })
+            .catch((err) => {
+                console.error(err)
+            })
+
     }
 
     const removeItem = () => {
@@ -103,16 +117,16 @@ const InventoryItem = (props: any) => {
                 </div>
                 <div className="flex items-center w-[70%]">
                     <div className="flex w-[30%] gap-[5%]">
-                        {itemQuantity < 10 ? 0 : ""}{itemQuantity} ({item[1].gramsPerUnit})
-                        <span className="cursor-pointer" onClick={() => { setItemQuantity(itemQuantity - 1 + 2); setSaveVisible(true) }}><img src="/icons/add.svg" alt="" /></span>
-                        <span className="cursor-pointer" onClick={() => { if (itemQuantity > 1) { setItemQuantity(itemQuantity - 1) } setSaveVisible(true) }}><img src="/icons/minus.svg" alt="" /></span>
+                        {itemData.units as number < 10 ? 0 : ""}{itemData.units} ({item[1].gramsPerUnit})
+                        <span className="cursor-pointer" onClick={() => { setItemData({ ...itemData, units: itemData.units as number + 1 }); setSaveVisible(true) }}><img src="/icons/add.svg" alt="" /></span>
+                        <span className="cursor-pointer" onClick={() => { if (itemData.units as number > 1) { setItemData({ ...itemData, units: itemData.units as number - 1 }) } setSaveVisible(true) }}><img src="/icons/minus.svg" alt="" /></span>
                     </div>
                     <div className="w-[20%]">
                         {moment(item[1].expiryDate).format('DD-MM-YYYY')}
                     </div>
                     <div className="w-[50%]">
                         {/* {item[1].notes} */}
-                        <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => { setSaveVisible(true); setItemData({...itemData, itemNotes: e.target.value}) }} />
+                        <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => { setSaveVisible(true); setItemData({ ...itemData, itemNotes: e.target.value }) }} />
                     </div>
                 </div>
                 {saveVisible && (<div className="absolute right-10 flex flex-row items-center cursor-pointer" onClick={updateItem}>

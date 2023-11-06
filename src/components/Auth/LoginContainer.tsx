@@ -23,7 +23,7 @@ const LoginContainer = () => {
             axios
                 .post("http://localhost:3000/auth/login", userCredentials)
                 .then((res) => {
-                    dispatch(setUser({user:res.data}))
+                    dispatch(setUser({ user: res.data }))
                     navigate("/dashboard")
                 })
                 .catch((err) => {

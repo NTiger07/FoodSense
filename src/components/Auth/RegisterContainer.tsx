@@ -27,7 +27,7 @@ const RegisterContainer = () => {
       axios
         .post("http://localhost:3000/auth/register", userCredentials)
         .then((res) => {
-          dispatch(setUser(res.data))
+          dispatch(setUser({ user: res.data }))
           navigate("/dashboard")
         })
         .catch((err) => {

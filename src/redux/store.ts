@@ -6,7 +6,8 @@ import thunk from "redux-thunk";
 
 const persistConfig = {
   key: 'foodsense',
-  storage
+  storage: storage,
+  whitelist: ['user']
 }
 
 const persistedReducer = persistReducer(persistConfig, userReducer)

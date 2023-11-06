@@ -15,10 +15,10 @@ import { useSelector } from 'react-redux';
 
 function App() {
   const navigate = useNavigate()
-  const user = useSelector(state => state);
+  const user = useSelector(state => state.user);
   
   useEffect(() => {
-    if (user.email == null) {
+    if (user == null) {
       navigate("/auth/login")
     }
   }, [])

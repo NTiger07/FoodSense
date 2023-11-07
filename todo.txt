@@ -6,6 +6,7 @@ update readme
 
 -------AUTH-------
 form validation register asterisks additem login
+wrong password from api
 
 
 

@@ -1,11 +1,12 @@
 import Axios from "axios";
 import { useState, useEffect } from "react";
-import HeadingCard from "./HeadingCard.js";
+import HeadingCard from "./HeadingCard";
+import "./MainContent.css"
 
 export default function MainContent(props: any) {
-  const {parameters, toggle, isHidden} = props
+  const { parameters, toggle, isHidden } = props
   const [recipes, setRecipes] = useState([]);
-  const [query, setQuery] = useState("chicken");
+  const [query, setQuery] = useState("");
   const pms = parameters;
 
   async function getRecipes() {
@@ -58,15 +59,18 @@ export default function MainContent(props: any) {
             <img
               src={item.recipe.images.REGULAR.url}
               alt="meal"
-              className="mealImg"
+              className="mealImg h-[70%]"
             />
-            <span className="meal_name">{item.recipe.label}</span>
-            <div className="mealitem_favtime">
-              <div className="favtime_time">
-                <img src="/icons/clock.svg" alt="clock" className="svgs" />
-                <span className="time_span">{item.recipe.totalTime} min</span>
+            <div className="flex flex-col justify-between h-[30%]">
+              <span className="meal_name">{item.recipe.label}</span>
+              <div className="mealitem_favtime">
+                <div className="favtime_time">
+                  <img src="/icons/clock.svg" alt="clock" className="svgs" />
+                  <span className="time_span">{item.recipe.totalTime} min</span>
+                </div>
               </div>
             </div>
+
           </div>
         </a>
       </>
@@ -81,8 +85,8 @@ export default function MainContent(props: any) {
         toggle={toggle}
         isHidden={isHidden}
       />
-      <div className="maincontent_container">
-        <h2 className="maincontent_title">Your Search Results...</h2>
+      <div className="">
+        <h2 className="mt-[5%]">Your Search Results...</h2>
         <div className="mealrecipes_container">{mealElement}</div>
       </div>
     </>

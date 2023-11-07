@@ -27,8 +27,12 @@ const LoginContainer = () => {
                     navigate("/dashboard")
                 })
                 .catch((err) => {
-                    console.error(err)
-                    toast.error("Error Logging in")
+                    if (err.response.status == 404){
+                        toast.error("User not found, check the Email and Password and try again")
+                    } else{
+                        console.error(err)
+                        toast.error("Error Logging in")
+                    }
                 })
         }
 

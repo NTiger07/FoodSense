@@ -86,8 +86,7 @@ export default function MainContent(props: any) {
         isHidden={isHidden}
       />
       <div className="">
-        <h2 className="mt-[5%]">Your Search Results...</h2>
-        <div className="mealrecipes_container">{mealElement}</div>
+        <div className="mealrecipes_container mt-[2%]">{mealElement}</div>
       </div>
     </>
   );

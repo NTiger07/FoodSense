@@ -4,15 +4,10 @@ import axios from "axios";
 import dayjs from "dayjs";
 import { useState } from "react"
 import { toast } from "react-toastify";
+import ItemType from "../../types/ItemType";
 
 
-type ItemType = {
-    name: string,
-    quantity: number | string,
-    grams: number | string,
-    expiryDate: Date | string,
-    notes: string
-}
+
 
 const AddInventoryItem = (props: any) => {
     const {userData, setAddInventory, getItems} = props

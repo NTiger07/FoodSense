@@ -9,11 +9,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import moment from "moment";
 import axios from "axios";
+import ItemDataType from "../../types/ItemDataType";
 
-type ItemDataType = {
-    units: number | string,
-    itemNotes: string
-}
+
 
 const InventoryItem = (props: any) => {
     const { item, getItems } = props

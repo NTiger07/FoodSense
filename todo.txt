@@ -44,3 +44,8 @@ console.log(`Carbon Footprint Reduction: ${reduction} kg CO2e`);
 
 -------ASSISSTANT-------
 get more api keys
+
+
+-------EDUCATION-------
+style paragraph
+why does education slow down app

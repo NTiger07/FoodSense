@@ -1,6 +1,4 @@
-import { useSelector } from "react-redux";
-
-const DashBoard = (props: any) => {
+const DashboardContainer = (props: any) => {
   const {userData} = props
   
 
@@ -9,4 +7,4 @@ const DashBoard = (props: any) => {
   )
 }
 
-export default DashBoard
+export default DashboardContainer

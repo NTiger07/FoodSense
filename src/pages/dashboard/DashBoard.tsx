@@ -1,4 +1,4 @@
-import MainDashBoard from "../../components/DashBoard"
+import DashboardContainer from "../../components/Dashboard/DashboardContainer"
 
 const Dashboard = (props: any) => {
   const {userData} = props
@@ -9,7 +9,7 @@ const Dashboard = (props: any) => {
         {/* <SideBar /> */}
       </div>
       <div className="w-[100%]">
-        <MainDashBoard userData={userData}/>
+        <DashboardContainer userData={userData}/>
       </div>
     </div>
   )

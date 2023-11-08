@@ -1,6 +1,7 @@
 -------GENERAL-------
 add images and tweak ui color to make it vibrant
 update readme
+image optimization
 
 
 
@@ -43,3 +44,5 @@ console.log(`Carbon Footprint Reduction: ${reduction} kg CO2e`);
 
 -------ASSISSTANT-------
 get more api keys
+add experimental (i) tag on sidebar
+dispatch to response redux

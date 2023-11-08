@@ -33,7 +33,7 @@ function App() {
       <div className={`${location.pathname == "/auth/login" || location.pathname == "/auth/register" ? "w-[0%]" : "w-[5%]"}`}>
         <SideBar />
       </div>
-      <div className={`${location.pathname == "/auth/login" || location.pathname == "/auth/register" ? "w-[100%]" : "w-[95%]"} h-[100vh] overflow-x-hidden bg-[#263238]`}>
+      <div className={`${location.pathname == "/auth/login" || location.pathname == "/auth/register" ? "w-[95%]" : "w-[100%]"} h-[100vh] overflow-x-hidden bg-[#263238]`}>
         <Routes>
           <Route path='/auth/login' element={<Login />} />
           <Route path='/auth/register' element={<Register />} />

@@ -1,6 +1,6 @@
 type ResponseType = {
   answerText: string;
-  media?: [];
+  media?: object[];
 };
 
 export default ResponseType

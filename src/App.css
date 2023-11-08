@@ -6,7 +6,6 @@
 
 @import "react-toastify/dist/ReactToastify.css";
 
-
 @font-face {
   font-family: "Lexend_Deca";
   src: local("Lexend_Deca"),
@@ -23,7 +22,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .tooltip {
@@ -35,8 +34,70 @@ input:-webkit-autofill:active {
   text-align: center;
 }
 
-.auth_container{
+.auth_container {
   background-image: url("/images/lily-banse--unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.bganim {
+  background: linear-gradient(
+    60deg,
+    #3792e4,
+    #31cabd,
+    #3792e4,
+    #f43b60,
+    #3792e4
+  );
+  background-size: 800% 800%;
+  -webkit-animation: NameAnimation 15s ease infinite;
+  -moz-animation: NameAnimation 15s ease infinite;
+  -o-animation: NameAnimation 15s ease infinite;
+  animation: NameAnimation 15s ease infinite;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+@-webkit-keyframes NameAnimation {
+  0% {
+    background-position: 0% 10%;
+  }
+  50% {
+    background-position: 100% 91%;
+  }
+  100% {
+    background-position: 0% 10%;
+  }
+}
+@-moz-keyframes NameAnimation {
+  0% {
+    background-position: 0% 10%;
+  }
+  50% {
+    background-position: 100% 91%;
+  }
+  100% {
+    background-position: 0% 10%;
+  }
+}
+@-o-keyframes NameAnimation {
+  0% {
+    background-position: 0% 10%;
+  }
+  50% {
+    background-position: 100% 91%;
+  }
+  100% {
+    background-position: 0% 10%;
+  }
+}
+@keyframes NameAnimation {
+  0% {
+    background-position: 0% 10%;
+  }
+  50% {
+    background-position: 100% 91%;
+  }
+  100% {
+    background-position: 0% 10%;
+  }
 }

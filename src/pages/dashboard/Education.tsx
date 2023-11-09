@@ -9,7 +9,7 @@ const Education = (props: any) => {
       <div className="w-[0%]">
         {/* <SideBar /> */}
       </div>
-      <div className="w-[100%]">
+      <div className="w-[95%]">
         <EducationContainer />
       </div>
     </div>

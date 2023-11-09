@@ -12,7 +12,7 @@ dasboard start
 
 
 -------INVENTORY-------
-show how many days left instead
+show how many days or months left instead
 restrict date picker from today upwards only
 when expiry date reached move to trash(food wasted)
 
@@ -26,6 +26,7 @@ wrong password from api
 
 -------ANALYTICS-------
 work on chart styles color text etc
+red chart if the value is negative
 add heading
 data aggregation same date add values
 

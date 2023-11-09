@@ -31,7 +31,7 @@ const IncomingDates = (props: any) => {
 
     return (
         <div className="INCOMINGEXPIRY p-[1rem] bg-[#37474F] w-full h-[50vh] rounded-lg shadow-lg">
-            <span className="text-light-black font-semibold text-[1.2rem]">Incoming Expiry Dates</span>
+            <span className="text-light-black font-semibold text-[1.2rem">Incoming Expiry Dates</span>
             <div className="flex flex-col mt-[2%]">
                 {expiryDates}
             </div>

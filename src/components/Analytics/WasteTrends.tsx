@@ -24,7 +24,7 @@ const WasteTrends = (props: any) => {
 
 
     return (
-        <div className="TRENDS w-[100%] h-[100%] bg-[#2e1c15] rounded-lg shadow-lg flex items-center">
+        <div className="TRENDS w-[100%] h-[100%] bg-[#152c2e] rounded-lg shadow-lg flex items-center">
             <ResponsiveContainer width="100%" height="80%">
                 <AreaChart data={sortedTransformedData}>
                     <defs>
@@ -38,7 +38,7 @@ const WasteTrends = (props: any) => {
 
                     <XAxis
                         dataKey="date"
-                        axisLine={false}
+                        axisLine={true}
                         tickLine={true}
                         interval={7}
                         tickFormatter={(str) => {
@@ -49,15 +49,15 @@ const WasteTrends = (props: any) => {
 
                     <YAxis
                         dataKey="Units"
-                        axisLine={false}
-                        tickLine={false}
+                        axisLine={true}
+                        tickLine={true}
                         tickCount={8}
                         tickFormatter={(number) => `${number.toFixed(0)}`}
                     />
 
                     <Tooltip contentStyle={{ backgroundColor: "black", borderRadius: "10px" }} />
 
-                    <CartesianGrid opacity={0.2} vertical={false} />
+                    <CartesianGrid opacity={0} vertical={false} />
                 </AreaChart>
             </ResponsiveContainer>
         </div>

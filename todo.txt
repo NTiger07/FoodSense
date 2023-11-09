@@ -48,4 +48,3 @@ get more api keys
 
 -------EDUCATION-------
 style paragraph
-why does education slow down app

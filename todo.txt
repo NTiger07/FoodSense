@@ -2,11 +2,19 @@
 add images and tweak ui color to make it vibrant
 update readme
 image optimization
+expired items (how to indicate)
 
 
 
 -------DASHBOARD-------
 dasboard start
+
+
+
+-------INVENTORY-------
+show how many days left instead
+restrict date picker from today upwards only
+when expiry date reached move to trash(food wasted)
 
 
 

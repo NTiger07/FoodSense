@@ -13,7 +13,7 @@ const AssistantContainer = () => {
     <div className="h-[100vh] pt-[2%]">
       <div className="SWITCH flex justify-center mb-[5%]">
         <span onClick={() => setTab(0)} className="cursor-pointer font-bold text-[1.8rem] px-[1rem] py-[.4rem] w-[12%] text-center hover:text-[1.77rem] transition-all">Recipe</span>
-        <span className="absolute bg-[] text-primary top-[4%] right-[28%]">Experiment</span>
+        <span className="absolute bg-[] text-primary top-[4%] right-[31%]"><img src="/icons/experiment.svg" alt="" /></span>
         <span onClick={() => setTab(1)} className="bganim bg-clip-text text-transparent cursor-pointer font-bold
         text-[1.8rem] px-[1rem] py-[.4rem] w-[12%] text-center hover:text-[1.77rem] transition-all ease-in">ChatBot</span>
       </div>

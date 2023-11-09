@@ -32,7 +32,7 @@ const SideBar = () => {
                 <div className={`flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => navigate("/assistant")}>
                     <img src="/icons/assistant-black.svg" className="w-[1.8rem]" alt="" />
                     <span className={`w-[100%] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}>Assistant</span>
-                    {isSidebarExpanded ? <span className="absolute bg-[] text-primary top-[41%] left-[50%]">Experiment</span> : null}
+                    {isSidebarExpanded ? <span className="absolute bg-[] text-primary top-[41%] left-[40%]"><img src="/icons/experiment.svg" alt="" /></span> : null}
                 </div>
                 <div className={`flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => navigate("/analytics")}>
                     <img src="/icons/analytics-google.svg" className="w-[1.8rem]" alt="" />

@@ -1,4 +1,5 @@
 import { format, parse } from "date-fns";
+import isThisQuarter from "date-fns/isThisQuarter";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const Progress = (props: any) => {
@@ -36,10 +37,10 @@ const Progress = (props: any) => {
         <div className="REDUCTIONPROG w-[60%] rounded-lg shadow-lg bg-[#37474F] h-[100%]">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={sortedTransformedData} margin={{ top: 25, right: 30, left: 0, bottom: 10 }}>
-                    <CartesianGrid opacity={0.2} vertical={false} />
+                    <CartesianGrid opacity={0} vertical={false} />
                     <XAxis
                         dataKey="date"
-                        axisLine={false}
+                        axisLine={true}
                         tickLine={true}
                         interval={15}
                         tickFormatter={(str) => {
@@ -49,7 +50,7 @@ const Progress = (props: any) => {
                     />
                     <YAxis
                         dataKey="Progress"
-                        axisLine={false}
+                        axisLine={true}
                         tickLine={false}
                     />
                     <Tooltip contentStyle={{ backgroundColor: "black", borderRadius: "10px" }} />

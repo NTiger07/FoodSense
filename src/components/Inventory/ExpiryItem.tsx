@@ -9,7 +9,7 @@ const ExpiryItem = (props: any) => {
     }, [])
     const trashExpired = () => {
         if (moment(item[1].expiryDate).fromNow().slice(-3) === "ago") {
-            axios.post(`http://localhost:3000/items/trash/${item[1]._id}&expire`)
+            axios.post(`${import.meta.env.VITE_LOCAL_URL}items/trash/${item[1]._id}&expire`)
                 .then(() => {
                     getItems()
                 })

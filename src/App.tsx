@@ -17,11 +17,11 @@ function App() {
   const navigate = useNavigate()
   const user = useSelector(state => state.user);
 
-  useEffect(() => {
-    if (user == null) {
-      navigate("/auth/login")
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (user == null) {
+  //     navigate("/auth/login")
+  //   }
+  // }, [])
   
   const location = useLocation()
 

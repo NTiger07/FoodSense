@@ -14,7 +14,7 @@ const DashboardContainer = (props: any) => {
 
   const getItems = () => {
     axios
-      .get(`http://localhost:3000/trash/all/${userData.id}`)
+      .get(`${import.meta.env.VITE_LOCAL_URL}trash/all/${userData.id}`)
       .then((res) => {
         setTrashList(res.data)
       })

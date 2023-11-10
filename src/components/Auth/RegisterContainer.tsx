@@ -25,7 +25,7 @@ const RegisterContainer = () => {
   const registerUser = () => {
     if (password == confirmPassword) {
       axios
-        .post("http://localhost:3000/auth/register", userCredentials)
+        .post(`${import.meta.env.VITE_LOCAL_URL}auth/register`, userCredentials)
         .then((res) => {
           dispatch(setUser({ user: res.data }))
           navigate("/dashboard")

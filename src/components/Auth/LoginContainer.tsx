@@ -21,7 +21,7 @@ const LoginContainer = () => {
     const authenticateUser = () => {
         if (username !== "" && password !== "") {
             axios
-                .post("http://localhost:3000/auth/login", userCredentials)
+                .post(`${import.meta.env.VITE_LOCAL_URL}auth/login`, userCredentials)
                 .then((res) => {
                     dispatch(setUser({ user: res.data }))
                     navigate("/dashboard")

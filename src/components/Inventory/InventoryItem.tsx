@@ -41,7 +41,7 @@ const InventoryItem = (props: any) => {
         }
 
         axios
-            .put(`http://localhost:3000/items/${item[1]._id}`, newItemData)
+            .put(`${import.meta.env.VITE_LOCAL_URL}items/${item[1]._id}`, newItemData)
             .then(() => {
                 toast.info("Inventory Updated")
                 setSaveVisible(false)
@@ -54,7 +54,7 @@ const InventoryItem = (props: any) => {
     }
 
     const removeItem = () => {
-        axios.delete(`http://localhost:3000/items/${item[1]._id}`)
+        axios.delete(`${import.meta.env.VITE_LOCAL_URL}items/${item[1]._id}`)
             .then(() => {
                 toast.info("Item removed")
                 setOpen(false)
@@ -67,7 +67,7 @@ const InventoryItem = (props: any) => {
     };
 
     const trashItem = () => {
-        axios.post(`http://localhost:3000/items/trash/${item[1]._id}&trash`)
+        axios.post(`${import.meta.env.VITE_LOCAL_URL}items/trash/${item[1]._id}&trash`)
             .then(() => {
                 toast.info("Item Trashed")
                 setOpen(false)

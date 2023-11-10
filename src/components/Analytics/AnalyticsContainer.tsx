@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import WasteTrends from "./WasteTrends";
 import Progress from "./Progress";
 import Impact from "./Impact";
+import TrashType from "./TrashType";
 
 const AnalyticsContainer = (props: any) => {
   const { userData } = props
@@ -39,6 +40,7 @@ const AnalyticsContainer = (props: any) => {
         <div className="h-[40vh] gap-4 flex items-center mb-[2rem]">
           <Progress data={trashList} />
           <Impact data={trashList} />
+          <TrashType />
           {/* <div className="MONTHLY SUMMARY w-[33%] rounded-lg shadow-lg bg-[#37474F] h-[100%]"></div> */}
         </div>
 

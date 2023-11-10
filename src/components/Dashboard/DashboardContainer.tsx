@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import WasteTrends from "../Analytics/WasteTrends"
 import IncomingDates from "./IncomingDates"
+import Recipes from "./Recipes"
 
 const DashboardContainer = (props: any) => {
   const { userData } = props
@@ -38,9 +39,8 @@ const DashboardContainer = (props: any) => {
           </div>
         </div>
 
-
-
-        <div className="bg-primary h-[40vh] w-full mb-[2rem] rounded-lg shadow-lg">
+        <div className="bg-primary h-[60vh] w-full mb-[2rem] rounded-lg shadow-lg">
+          <Recipes />
         </div>
       </div>
     </div>

@@ -25,7 +25,11 @@ wrong password from api
 work on chart styles color text etc
 item expiryDate not correct
 add heading
+do pie/donut chart for trashtype
 data aggregation same date add values
+
+
+
 
 Carbon footprint (kg CO2e) = Total grams of food wasted * Emission factor (kg CO2e/g)  4.5kg
 const EMISSION_FACTOR = 4.5; // kg CO2e/kg of food

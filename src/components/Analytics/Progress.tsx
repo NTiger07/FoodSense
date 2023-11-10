@@ -1,5 +1,5 @@
 import { format, parse } from "date-fns";
-import { Bar, BarChart, CartesianGrid, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const Progress = (props: any) => {
     const { data } = props
@@ -74,7 +74,6 @@ const Progress = (props: any) => {
                     <Bar dataKey="Progress" fill="#8884d8" />
                 </BarChart>
             </ResponsiveContainer>
-
         </div>
     )
 }

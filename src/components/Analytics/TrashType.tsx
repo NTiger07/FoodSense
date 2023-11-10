@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { ResponsiveContainer, PieChart } from "recharts"
 
 const TrashType = (props: any) => {
   const { userData } = props
@@ -16,7 +17,11 @@ const TrashType = (props: any) => {
   }
 
   return (
-    <div className="IMPACT w-[30%] rounded-lg shadow-lg bg-[#37474F] h-[100%]" onClick={getType}>Trash Type</div>
+    <div className="IMPACT w-[30%] rounded-lg shadow-lg bg-[#37474F] h-[100%]" onClick={getType}>
+      {/* <ResponsiveContainer width="100%" height="100%">
+       <PieChart data={response} /> 
+      </ResponsiveContainer> */}
+    </div>
   )
 }
 

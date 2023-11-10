@@ -12,7 +12,6 @@ dasboard start
 
 
 -------INVENTORY-------
-when expiry date reached move to trash(food wasted)
 
 
 

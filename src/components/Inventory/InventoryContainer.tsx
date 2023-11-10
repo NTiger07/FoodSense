@@ -22,7 +22,7 @@ const InventoryContainer = (props: any) => {
 
   const getItems = () => {
     axios
-      .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData.id}`)
+      .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData?.id}`)
       .then((res) => {
         setInventoryList(res.data)
       })

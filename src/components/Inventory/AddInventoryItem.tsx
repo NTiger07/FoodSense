@@ -36,7 +36,7 @@ const AddInventoryItem = (props: any) => {
     //From validation with add button
     const addItem = () => {
         axios
-            .post(`${import.meta.env.VITE_LOCAL_URL}items/${userData.id}`, newItemObject)
+            .post(`${import.meta.env.VITE_LOCAL_URL}items/${userData?.id}`, newItemObject)
             .then(() => {
                 console.log("Item Added")
                 toast.info("New Item Added")

@@ -12,8 +12,6 @@ dasboard start
 
 
 -------INVENTORY-------
-show how many days or months left instead
-restrict date picker from today upwards only
 when expiry date reached move to trash(food wasted)
 
 

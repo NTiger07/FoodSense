@@ -10,7 +10,7 @@ import ItemType from "../../types/ItemType";
 
 
 const AddInventoryItem = (props: any) => {
-    const {userData, setAddInventory, getItems} = props
+    const { userData, setAddInventory, getItems } = props
 
     const handleExpiryDateChange = (time) => {
         setNewItem({ ...newItem, expiryDate: dayjs(time, 'DD-MM-YYYY').format('DD-MM-YYYY') })
@@ -67,6 +67,7 @@ const AddInventoryItem = (props: any) => {
                         <div className="flex items-center justify-between">
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                                 <DatePicker
+                                    disablePast
                                     label="Expiry Date"
                                     value={dayjs(newItem.expiryDate)}
                                     onChange={handleExpiryDateChange}

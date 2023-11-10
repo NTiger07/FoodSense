@@ -67,7 +67,7 @@ const InventoryItem = (props: any) => {
     };
 
     const trashItem = () => {
-        axios.post(`http://localhost:3000/items/trash/${item[1]._id}`)
+        axios.post(`http://localhost:3000/items/trash/${item[1]._id}&trash`)
             .then(() => {
                 toast.info("Item Trashed")
                 setOpen(false)

@@ -1,7 +1,6 @@
 import axios from "axios"
 import moment from "moment"
 import { useEffect } from "react"
-import { toast } from "react-toastify"
 
 const ExpiryItem = (props: any) => {
     const { item, getItems } = props
@@ -10,9 +9,8 @@ const ExpiryItem = (props: any) => {
     }, [])
     const trashExpired = () => {
         if (moment(item[1].expiryDate).fromNow().slice(-3) === "ago") {
-            axios.post(`http://localhost:3000/items/trash/${item[1]._id}`)
+            axios.post(`http://localhost:3000/items/trash/${item[1]._id}&expire`)
                 .then(() => {
-                    // toast.info("Item Trashed")
                     getItems()
                 })
                 .catch((err) => {

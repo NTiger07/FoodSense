@@ -1,6 +1,5 @@
 import { format, parse } from "date-fns";
-import isThisQuarter from "date-fns/isThisQuarter";
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const Progress = (props: any) => {
     const { data } = props
@@ -32,6 +31,20 @@ const Progress = (props: any) => {
         Progress: item.progress,
     }));
 
+    const maxProgress = sortedTransformedData.reduce((max, item) => {
+        if (Number(item.Progress) > max) {
+            max = Number(item.Progress);
+        }
+        return max;
+    }, -Infinity);
+
+    const minProgress = sortedTransformedData.reduce((min, item) => {
+        if (Number(item.Progress) < min) {
+            min = Number(item.Progress);
+        }
+        return min;
+    }, Infinity);
+
 
     return (
         <div className="REDUCTIONPROG w-[60%] rounded-lg shadow-lg bg-[#37474F] h-[100%]">
@@ -50,11 +63,14 @@ const Progress = (props: any) => {
                     />
                     <YAxis
                         dataKey="Progress"
+                        domain={[minProgress - 1, maxProgress + 1]}
                         axisLine={true}
                         tickLine={false}
+                        tickFormatter={(num: number) => {
+                            return num.toFixed(0)
+                        }}
                     />
                     <Tooltip contentStyle={{ backgroundColor: "black", borderRadius: "10px" }} />
-                    {/* <Legend /> */}
                     <Bar dataKey="Progress" fill="#8884d8" />
                 </BarChart>
             </ResponsiveContainer>

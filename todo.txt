@@ -12,7 +12,7 @@ dasboard start
 
 
 -------INVENTORY-------
-
+expiry type
 
 
 -------AUTH-------
@@ -23,6 +23,7 @@ wrong password from api
 
 -------ANALYTICS-------
 work on chart styles color text etc
+item expiryDate not correct
 red chart if the value is negative
 add heading
 data aggregation same date add values

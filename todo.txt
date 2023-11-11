@@ -11,10 +11,6 @@ add some text to recipes
 
 
 
--------INVENTORY-------
-expiry type
-
-
 -------AUTH-------
 form validation register asterisks additem login
 wrong password from api
@@ -25,7 +21,6 @@ wrong password from api
 work on chart styles color text etc
 item expiryDate not correct
 add heading
-do pie/donut chart for trashtype
 data aggregation same date add values
 
 

@@ -2,7 +2,7 @@
 add images and tweak ui color to make it vibrant
 update readme
 image optimization
-expired items (how to indicate)
+heading text for every section
 
 
 
@@ -19,7 +19,6 @@ wrong password from api
 
 -------ANALYTICS-------
 work on chart styles color text etc
-item expiryDate not correct
 add heading
 data aggregation same date add values
 

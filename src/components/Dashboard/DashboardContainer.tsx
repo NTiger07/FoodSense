@@ -39,7 +39,7 @@ const DashboardContainer = (props: any) => {
           </div>
         </div>
 
-        <div className="bg-primary h-[60vh] w-full mb-[2rem] rounded-lg shadow-lg">
+        <div className="h-fit w-full mb-[2rem] rounded-lg shadow-lg">
           <Recipes />
         </div>
       </div>

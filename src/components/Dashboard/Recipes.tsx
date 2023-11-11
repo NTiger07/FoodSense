@@ -1,8 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
+    const pms = "";
+
+    useEffect(() => {
+        getRecipes()
+    }, [])
 
     const getRecipes = () => {
         const id_array = [
@@ -31,10 +36,62 @@ const Recipes = () => {
             "f1ad50f0054bbec1e11579ed9bba1adb",
             "03bb82952d4ad3d1a42bb5a95be3ff5d",
         ];
+        const foodIngredients = [
+            'Chicken',
+            'Beef',
+            'Fish',
+            'Shrimp',
+            'Tofu',
+            'Eggs',
+            'Milk',
+            'Cheese',
+            'Butter',
+            'Olive Oil',
+            'Garlic',
+            'Onion',
+            'Tomatoes',
+            'Lettuce',
+            'Spinach',
+            'Broccoli',
+            'Carrots',
+            'Potatoes',
+            'Sweet Potatoes',
+            'Rice',
+            'Quinoa',
+            'Pasta',
+            'Bread',
+            'Oats',
+            'Cereal',
+            'Honey',
+            'Maple Syrup',
+            'Salt',
+            'Pepper',
+            'Basil',
+            'Cilantro',
+            'Thyme',
+            'Rosemary',
+            'Cumin',
+            'Paprika',
+            'Cinnamon',
+            'Nutmeg',
+            'Vanilla Extract',
+            'Sugar',
+            'Flour',
+            'Baking Powder',
+            'Baking Soda',
+            'Chocolate',
+            'Coffee',
+            'Tea',
+            'Lemon',
+            'Lime',
+            'Avocado',
+            'Mushrooms'
+        ];
         const index = Math.floor(Math.random() * id_array.length);
         const app_id = id_array[index];
         const app_key = key_array[index];
-        const API_URL = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${app_id}&app_key=${app_key}&time=1%2B${pms}`;
+        const foodIngredient = Math.floor(Math.random() * foodIngredients.length)
+        const API_URL = `https://api.edamam.com/api/recipes/v2?type=public&q=${foodIngredient}&app_id=${app_id}&app_key=${app_key}&time=1%2B${pms}`;
         axios
             .get(API_URL)
             .then((res) => {
@@ -46,7 +103,7 @@ const Recipes = () => {
     }
 
     return (
-        <div>
+        <div className="grid grid-cols-4">
             {recipes.slice(0, 4).map((item) => (
                 <a href={item.recipe.url} target="_blank" rel="noopener noreferrer">
                     <div className="mealrecipes_item">
@@ -56,7 +113,7 @@ const Recipes = () => {
                             className="mealImg h-[70%]"
                         />
                         <div className="flex flex-col justify-between h-[30%]">
-                            <span className="meal_name">{item.recipe.label}</span>
+                            <span className="meal_name">{item.recipe.label.length > 45 ? `${item.recipe.label.slice(0, 45)}...` : item.recipe.label}</span>
                             <div className="mealitem_favtime">
                                 <div className="favtime_time">
                                     <img src="/icons/clock.svg" alt="clock" className="svgs" />

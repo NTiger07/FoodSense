@@ -53,6 +53,7 @@ console.log(`Carbon Footprint Reduction: ${reduction} kg CO2e`);
 
 -------ASSISSTANT-------
 get more api keys
+suggestions for search
 
 
 

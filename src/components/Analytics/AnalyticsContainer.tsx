@@ -22,6 +22,17 @@ const AnalyticsContainer = (props: any) => {
         console.error(err)
       })
   }
+  
+  const combinedObjects = trashList.reduce((acc, obj) => {
+    const existingObject = acc.find(item => item.createdAt.slice(0, 10) === obj.createdAt.slice(0, 10))
+
+    if (existingObject) {
+      existingObject.units += obj.units
+    } else{
+      acc.push({createdAt: obj.createdAt, units: obj.units})
+    }
+    return acc
+  }, [])
 
 
   return (
@@ -32,15 +43,15 @@ const AnalyticsContainer = (props: any) => {
 
       <div className="MAINSECTION h-content flex flex-col gap-7">
         <div className="MAINGRAPHS flex flex-row items-cente h-[50vh] gap-4">
-          <WasteTrends data={trashList} />
+          <WasteTrends data={combinedObjects} />
           {/* <div className="TYPES_PIE w-[30%] h-[100%] bg-[#37474F] rounded-lg shadow-lg">Waste Type Pie</div> */}
         </div>
 
 
         <div className="h-[40vh] gap-4 flex items-center mb-[2rem]">
-          <Progress data={trashList} />
-          <Impact data={trashList} userData={userData}/>
-          <TrashType userData={userData}/>
+          <Progress data={combinedObjects} />
+          <Impact data={trashList} userData={userData} />
+          <TrashType userData={userData} />
           {/* <div className="MONTHLY SUMMARY w-[33%] rounded-lg shadow-lg bg-[#37474F] h-[100%]"></div> */}
         </div>
 

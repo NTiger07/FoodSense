@@ -13,13 +13,13 @@ const Impact = (props: any) => {
 
   const sortedTransformedData = transformedData.map(item => ({
     date: item.date.toLocaleDateString(),
-    Units: item.Units,
+    "Carbon Footprint": item.Units,
   }));
 
 
   return (
     <div className="IMPACT w-[30%] rounded-lg shadow-lg bg-[#37474F] h-[100%]">
-      <ResponsiveContainer width="100%" height="80%">
+      <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={sortedTransformedData}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -28,7 +28,7 @@ const Impact = (props: any) => {
             </linearGradient>
           </defs>
 
-          <Area dataKey="Units" stroke="#8884d8" fill="url(#colorUv)" type={'monotoneX'} />
+          <Area dataKey="Carbon Footprint" stroke="#8884d8" fill="url(#colorUv)" type={'monotoneX'} />
 
           <XAxis
             dataKey="date"
@@ -42,14 +42,14 @@ const Impact = (props: any) => {
           />
 
           <YAxis
-            dataKey="Units"
+            dataKey="Carbon Footprint"
             axisLine={true}
             tickLine={true}
             tickCount={8}
             tickFormatter={(number) => `${number.toFixed(0)}`}
           />
 
-          <Tooltip contentStyle={{ backgroundColor: "black", borderRadius: "10px" }} />
+          <Tooltip contentStyle={{ backgroundColor: "black", borderRadius: "10px" }} formatter={(units: number) => units.toFixed(0) + " KgCO2"} />
 
           <CartesianGrid opacity={0} vertical={false} />
         </AreaChart>

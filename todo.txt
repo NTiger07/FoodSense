@@ -22,7 +22,7 @@ wrong password from api
 work on chart styles color text etc
 add heading
 how carbon footprit is calculated (estimata kini, dadada)
-
+add margin
 
 
 Carbon footprint (kg CO2e) = Total grams of food wasted * Emission factor (kg CO2e/g)  4.5kg

@@ -15,7 +15,6 @@ const SideBar = () => {
         navigate("/auth/login")
     }
     const sidebar = useSelector(state => state.sidebar);
-    console.log(sidebar)
     
     return (
         <div className={`relative bg-whitesmoke-200 transition-all h-[100vh] w-[100%] flex flex-col shadow-xl pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`} onMouseEnter={() => setIsSideBarExpanded(true)} onMouseLeave={() => setIsSideBarExpanded(false)}>
@@ -44,7 +43,7 @@ const SideBar = () => {
                 </div>
                 <div className={`${sidebar == "analytics" && isSidebarExpanded ? "bg-[#00B07426] rounded-lg" : ""} relative py-[.4rem] flex flex-row items-center cursor-pointer w-full gap-2 ${isSidebarExpanded ? "justify-center" : "w-full justify-center"}`} onClick={() => {navigate("/analytics"); dispatch(setSidebar("analytics"))}}>
                     {sidebar == "analytics" && !isSidebarExpanded ? <div className="absolute bg-[#00B074] h-full w-[4px] left-0"></div> : null}
-                    <img src="/icons/analytics-google.svg" className="w-[1.8rem]" alt="" />
+                    <img src="/icons/analytics-sedap.svg" className="w-[1.8rem]" alt="" />
                     <span className={`w-fit text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}>Analytics</span>
                 </div>
                 <div className={`${sidebar == "education" && isSidebarExpanded ? "bg-[#00B07426] rounded-lg" : ""} relative py-[.4rem] flex flex-row items-center cursor-pointer w-full gap-2 ${isSidebarExpanded ? "justify-center" : "w-full justify-center"}`} onClick={() => {navigate("/education"); dispatch(setSidebar("education"))}}>

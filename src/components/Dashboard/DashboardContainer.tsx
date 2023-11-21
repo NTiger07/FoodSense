@@ -37,8 +37,9 @@ const DashboardContainer = (props: any) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-[#37474F] bg-[url('/images/welcome.png')] bg-cover w-full p-[1rem] mx-[2%] text-[1.5rem] mb-[2%] font-semibold h-[30vh]">
-        Welcome {userData?.firstname} {userData?.lastname}
+      <div className="bg-[#37474F] flex flex-col bg-[url('/images/welcome.png')] bg-cover w-full p-[1rem] mx-[2%] text-[1.5rem] mb-[2%] font-semibold h-[30vh]">
+        <span className="text-[3rem] font-extrabold">DASHBOARD</span>
+        Hi, {userData?.firstname}. Welcome back to FoodSense!
       </div>
       <div className="MAINCONTENT w-[95%] flex flex-col items-center justify-center gap-4">
 

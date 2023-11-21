@@ -5,7 +5,8 @@ image optimization
 heading text for every section
 landing page at "/" route
 useEffect running twice
-
+foodsense name/logo at sidebar
+a way to show to sow active tab (maybe redux???)
 
 
 -------DASHBOARD-------

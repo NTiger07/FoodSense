@@ -37,7 +37,7 @@ const DashboardContainer = (props: any) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-[#37474F] w-[85%] p-[1rem] mt-[2rem] rounded-lg shadow-xl text-[1.5rem] mb-[2%] font-semibold">
+      <div className="bg-[#37474F] bg-[url('/images/welcome.png')] bg-cover w-full p-[1rem] mx-[2%] text-[1.5rem] mb-[2%] font-semibold h-[30vh]">
         Welcome {userData?.firstname} {userData?.lastname}
       </div>
       <div className="MAINCONTENT w-[95%] flex flex-col items-center justify-center gap-4">

@@ -18,7 +18,7 @@ function App() {
   const location = useLocation()
 
   const user = useSelector(state => state.user);
-
+  
   useEffect(() => {
     if (user == null && location.pathname !== "/auth/login" && location.pathname !== "/auth/register") {
       navigate("/auth/login");
@@ -36,7 +36,7 @@ function App() {
       <div className={`${location.pathname == "/auth/login" || location.pathname == "/auth/register" ? "w-[0%]" : "w-[5%]"}`}>
         <SideBar />
       </div>
-      <div className="w-[100%] h-[100vh] overflow-x-hidden bg-[#263238]">
+      <div className="w-[100%] h-[100vh] overflow-x-hidden bg-[#b1aaaace]">
         <Routes>
           <Route path='/auth/login' element={<Login />} />
           <Route path='/auth/register' element={<Register />} />

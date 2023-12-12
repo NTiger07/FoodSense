@@ -14,7 +14,7 @@ const IncomingDates = (props: any) => {
         .sort((a, b) => new Date(a[1].expiryDate) - new Date(b[1].expiryDate))
         .slice(0, 7)
         .map((item) => {
-            return <ExpiryItem item={item} />;
+            return <ExpiryItem item={item} getItems={getItems} />;
         });
 
     const getItems = () => {

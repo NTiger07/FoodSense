@@ -115,7 +115,7 @@ const Recipes = () => {
                         <div className="flex flex-col justify-between h-[30%]">
                             <span className="meal_name">{item.recipe.label.length > 45 ? `${item.recipe.label.slice(0, 45)}...` : item.recipe.label}</span>
                             <div className="mealitem_favtime">
-                                <div className="favtime_time">
+                                <div className="flex items-center favtime_time gap-1">
                                     <img src="/icons/clock.svg" alt="clock" className="svgs" />
                                     <span className="time_span">{item.recipe.totalTime} min</span>
                                 </div>

@@ -4,8 +4,7 @@ update readme
 image optimization
 heading text for every section
 landing page at "/" route
-useEffect running twice
-
+sidebar arrow click to expand like gene
 
 -------DASHBOARD-------
 add some text to recipes

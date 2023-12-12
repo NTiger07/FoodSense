@@ -10,23 +10,24 @@ const IncomingDates = (props: any) => {
         getItems()
     }, [])
 
+    
+    const getItems = () => {
+        axios
+        .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData?.id}`)
+        .then((res) => {
+            setInventoryList(res.data)
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+    }
+    
     const expiryDates = Object.entries(inventoryList)
         .sort((a, b) => new Date(a[1].expiryDate) - new Date(b[1].expiryDate))
         .slice(0, 7)
         .map((item) => {
             return <ExpiryItem item={item} getItems={getItems} />;
         });
-
-    const getItems = () => {
-        axios
-            .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData?.id}`)
-            .then((res) => {
-                setInventoryList(res.data)
-            })
-            .catch((err) => {
-                console.error(err)
-            })
-    }
 
 
     return (

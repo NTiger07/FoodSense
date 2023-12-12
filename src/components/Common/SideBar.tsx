@@ -17,11 +17,14 @@ const SideBar = () => {
     const sidebar = useSelector(state => state.sidebar);
     
     return (
-        <div className={`relative bg-whitesmoke-200 transition-all h-[100vh] w-[100%] flex flex-col shadow-xl pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`} onMouseEnter={() => setIsSideBarExpanded(true)} onMouseLeave={() => setIsSideBarExpanded(false)}>
-            <div className="w-full h-[30%] flex justify-center mb-[6rem] cursor-pointer" onClick={() => setIsSideBarExpanded(!isSidebarExpanded)}>
-                <div className={`flex flex-row items-center cursor-pointer w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => navigate("/dashboard")}>
-                    <img src="/icons/foodsense-circle.svg" alt="" />
+        <div className={`relative bg-whitesmoke-200 transition-all h-[100vh] w-[100%] flex flex-col shadow-xl pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`}>
+            <div className="w-full h-[30%] flex justify-center mb-[6rem]">
+                <div className={`relative flex flex-row items-center w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => navigate("/dashboard")}>
+                    <img src="/icons/foodsense-circle.svg" alt="" className="cursor-pointer" onClick={() => setIsSideBarExpanded(true)}/>
                     <span className={`w-[11rem] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}><img src="/images/FoodSense-logos_black.png" className="w-[5rem]" alt="" /></span>
+                    {isSidebarExpanded ? <svg onClick={() => setIsSideBarExpanded(false)} xmlns="http://www.w3.org/2000/svg" className="absolute right-[-1rem] cursor-pointer" width="20" height="15" viewBox="0 0 8 12" fill="none">
+                        <path d="M6.5 11L1.5 6L6.5 1" stroke="#667499" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>: null}
                 </div>
             </div>
             <div className={`h-[70%] flex flex-col w-full items-center justify-center gap-[3rem] text-[#000000] ${isSidebarExpanded ? "px-[15px]" : ""}`}>

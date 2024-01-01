@@ -113,9 +113,9 @@ const Recipes = () => {
                             className="mealImg h-[70%]"
                         />
                         <div className="flex flex-col justify-between h-[30%]">
-                            <span className="meal_name">{item.recipe.label.length > 45 ? `${item.recipe.label.slice(0, 45)}...` : item.recipe.label}</span>
+                            <span className="meal_name h-[50%]">{item.recipe.label.length > 30 ? `${item.recipe.label.slice(0, 30)}...` : item.recipe.label}</span>
                             <div className="mealitem_favtime">
-                                <div className="flex items-center favtime_time gap-1">
+                                <div className="flex items-center favtime_time gap-1 h-[50%]">
                                     <img src="/icons/clock.svg" alt="clock" className="svgs" />
                                     <span className="time_span">{item.recipe.totalTime} min</span>
                                 </div>

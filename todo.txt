@@ -1,9 +1,9 @@
 -------GENERAL-------
 add images and tweak ui color to make it vibrant
 update readme
-image optimization
 heading text for every section
 landing page at "/" route
+add images in HTML file
 
 -------DASHBOARD-------
 add some text to recipes
@@ -28,8 +28,3 @@ add margin
 -------ASSISSTANT-------
 get more api keys
 suggestions for search
-
-
-
--------EDUCATION-------
-style paragraph

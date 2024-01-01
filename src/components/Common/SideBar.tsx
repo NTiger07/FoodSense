@@ -19,7 +19,7 @@ const SideBar = () => {
     return (
         <div className={`relative bg-whitesmoke-200 transition-all h-[100vh] w-[100%] flex flex-col shadow-xl pt-[30%] pb-[5rem] ${isSidebarExpanded ? "w-[15rem] top-0 absolute z-20 h-[100vh]" : ""}`}>
             <div className="w-full h-[30%] flex justify-center mb-[6rem]">
-                <div className={`relative flex flex-row items-center w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`} onClick={() => navigate("/dashboard")}>
+                <div className={`relative flex flex-row items-center w-[70%] gap-2 ${isSidebarExpanded ? "" : "w-full justify-center"}`}>
                     <img src="/icons/foodsense-circle.svg" alt="" className="cursor-pointer" onClick={() => setIsSideBarExpanded(true)}/>
                     <span className={`w-[11rem] text-left ${isSidebarExpanded ? "text-[1.2rem] font-semibold" : "hidden"}`}><img src="/images/FoodSense-logos_black.png" className="w-[5rem]" alt="" /></span>
                     {isSidebarExpanded ? <svg onClick={() => setIsSideBarExpanded(false)} xmlns="http://www.w3.org/2000/svg" className="absolute right-[-1rem] cursor-pointer" width="20" height="15" viewBox="0 0 8 12" fill="none">

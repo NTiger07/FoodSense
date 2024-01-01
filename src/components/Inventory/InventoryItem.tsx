@@ -23,7 +23,7 @@ const InventoryItem = (props: any) => {
         if (item[0] % 2 == 0) {  // even number
             return { backgroundColor: "#263238", };
         }
-        return { backgroundColor: "#37474F", };
+        return { backgroundColor: "#00B074", };
     }, [item]);
 
     const [saveVisible, setSaveVisible] = useState(false)
@@ -94,7 +94,7 @@ const InventoryItem = (props: any) => {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Do you want to move this item to trash or remove it from your inventory?"
+                        Do you want to move this item to trash or remove it from your inventory? (Removing it clears all records of the item)"
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

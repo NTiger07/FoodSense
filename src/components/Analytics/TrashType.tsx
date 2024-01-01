@@ -23,7 +23,7 @@ const TrashType = (props: any) => {
   const COLORS = ['#d12b2f', '#4A6CF7']
 
   return (
-    <div className="TRASHTYPE w-[30%] rounded-lg shadow-lg bg-[#37474F] h-[100%]">
+    <div className="TRASHTYPE w-[30%] rounded-lg shadow-lg bg-[#00B074] h-[100%]">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart margin={{ top: 15, right: 5, bottom: 5, left: 5 }}>
           <Pie data={response} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={70} fill="#82ca9d">

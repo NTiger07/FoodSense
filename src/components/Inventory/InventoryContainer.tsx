@@ -60,11 +60,17 @@ const InventoryContainer = (props: any) => {
           <AddInventoryItem userData={userData} setAddInventory={setAddInventory} getItems={getItems} />
         </DialogContent>
       </Dialog>
+
       <div className="SEARCH">
         Search and account
       </div>
 
-      <div className="flex flex-col bg-[#37474F] shadow-lg rounded-lg p-[1.5rem] my-[2%]">
+      <div className="w-full p-[1rem] text-[1.5rem] mb-[2%] font-semibold flex flex-col h-[30vh] bg-[url('/images/inventory.jpg')] bg-cover">
+        <span className="text-[3rem] font-extrabold">INVENTORY</span>
+        Manage and keep track of items in your inventory
+      </div>
+
+      <div className="flex flex-col bg-[#00B074] shadow-lg rounded-lg p-[1.5rem] my-[2%]">
         <span>{inventoryList.length} Item(s)</span>
       </div>
 
@@ -72,7 +78,7 @@ const InventoryContainer = (props: any) => {
 
       <div className="flex flex-row justify-between pb-[2%]">
 
-        <div className="ITEMS flex flex-col h-fit w-[65%] bg-[#37474F]">
+        <div className="ITEMS flex flex-col h-fit w-[65%] bg-[#00B074]">
 
 
           <div className="HEADER flex items-center py-[2%] w-full text-light-black font-semibold">
@@ -106,7 +112,7 @@ const InventoryContainer = (props: any) => {
         </div>
 
 
-        <div className="INCOMINGEXPIRY p-[1rem] bg-[#37474F] w-[30%] h-[50vh] rounded-lg shadow-lg">
+        <div className="INCOMINGEXPIRY p-[1rem] bg-[#00B074] w-[30%] h-[50vh] rounded-lg shadow-lg">
           <span className="text-light-black font-semibold text-[1.2rem]">Incoming Expiry Dates</span>
           <div className="flex flex-col mt-[2%]">
             {expiryDates}

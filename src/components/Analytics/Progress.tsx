@@ -47,7 +47,7 @@ const Progress = (props: any) => {
 
 
     return (
-        <div className="REDUCTIONPROG w-[40%] rounded-lg shadow-lg bg-[#37474F] h-[100%]">
+        <div className="REDUCTIONPROG w-[40%] rounded-lg shadow-lg bg-[#00B074] h-[100%]">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={sortedTransformedData} margin={{ top: 25, right: 30, left: 0, bottom: 10 }}>
                     <CartesianGrid opacity={0} vertical={false} />

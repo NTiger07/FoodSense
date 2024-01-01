@@ -24,7 +24,7 @@ const WasteTrends = (props: any) => {
 
 
     return (
-        <div className="TRENDS w-[100%] h-[100%] bg-[#152c2e] rounded-lg shadow-lg flex items-center">
+        <div className="TRENDS w-[100%] h-[100%] bg-[#00B074] rounded-lg shadow-lg flex items-center">
             <ResponsiveContainer width="100%" height="80%">
                 <AreaChart data={sortedTransformedData}>
                     <defs>

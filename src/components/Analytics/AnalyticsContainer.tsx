@@ -22,14 +22,14 @@ const AnalyticsContainer = (props: any) => {
         console.error(err)
       })
   }
-  
+
   const combinedObjects = trashList.reduce((acc, obj) => {
     const existingObject = acc.find(item => item.createdAt.slice(0, 10) === obj.createdAt.slice(0, 10))
 
     if (existingObject) {
       existingObject.units += obj.units
-    } else{
-      acc.push({createdAt: obj.createdAt, units: obj.units, gramsPerUnit: obj.gramsPerUnit})
+    } else {
+      acc.push({ createdAt: obj.createdAt, units: obj.units, gramsPerUnit: obj.gramsPerUnit })
     }
     return acc
   }, [])
@@ -44,7 +44,7 @@ const AnalyticsContainer = (props: any) => {
       <div className="MAINSECTION h-content flex flex-col gap-7">
         <div className="MAINGRAPHS flex flex-row items-cente h-[50vh] gap-4">
           <WasteTrends data={combinedObjects} />
-          {/* <div className="TYPES_PIE w-[30%] h-[100%] bg-[#37474F] rounded-lg shadow-lg">Waste Type Pie</div> */}
+          {/* <div className="TYPES_PIE w-[30%] h-[100%] bg-[#00B074] rounded-lg shadow-lg">Waste Type Pie</div> */}
         </div>
 
 
@@ -52,7 +52,7 @@ const AnalyticsContainer = (props: any) => {
           <Progress data={combinedObjects} />
           <Impact data={combinedObjects} userData={userData} />
           <TrashType userData={userData} />
-          {/* <div className="MONTHLY SUMMARY w-[33%] rounded-lg shadow-lg bg-[#37474F] h-[100%]"></div> */}
+          {/* <div className="MONTHLY SUMMARY w-[33%] rounded-lg shadow-lg bg-[#00B074] h-[100%]"></div> */}
         </div>
 
 

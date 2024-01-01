@@ -7,6 +7,7 @@ add images in HTML file
 
 -------DASHBOARD-------
 add some text to recipes
+add items to expiry date text (something like no incoming expiry dates)
 
 
 
@@ -19,7 +20,7 @@ wrong password from api
 -------ANALYTICS-------
 work on chart styles color text etc
 add heading
-how carbon footprit is calculated (estimata kini, dadada)
+how carbon footprint is calculated (estimate kini, dadada)
 add margin
 
 

@@ -6,14 +6,11 @@ landing page at "/" route
 add images in HTML file
 
 -------DASHBOARD-------
-add some text to recipes
-add items to expiry date text (something like no incoming expiry dates)
 
 
 
 -------INVENTORY-------
 Implement search for items
-no item in inventory add item
 
 
 

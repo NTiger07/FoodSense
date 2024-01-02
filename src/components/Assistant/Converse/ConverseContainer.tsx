@@ -77,7 +77,6 @@ const ConverseContainer = () => {
             .then((res) => {
                 setResponse(res.data)
                 setIsLoading(false)
-                console.log(response)
             })
             .catch((err) => {
                 console.error(err);

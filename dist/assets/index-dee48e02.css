@@ -572,7 +572,7 @@ video {
 .border-none {
   border-style: none;
 }
-.border-\[\#A05000\] {
+.border-\[\#00B074\] {
   --tw-border-opacity: 1;
   border-color: rgb(160 80 0 / var(--tw-border-opacity));
 }
@@ -719,7 +719,7 @@ video {
   --tw-text-opacity: 1;
   color: rgb(20 23 31 / var(--tw-text-opacity));
 }
-.text-\[\#A05000\] {
+.text-\[\#00B074\] {
   --tw-text-opacity: 1;
   color: rgb(160 80 0 / var(--tw-text-opacity));
 }

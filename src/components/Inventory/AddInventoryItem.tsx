@@ -127,10 +127,10 @@ const AddInventoryItem = (props: any) => {
 
                     <div className="w-[20%] ml-[.7rem] flex justify-center h-full items-center" onClick={addItem}>
                         <button
-                            className="cursor-pointer bg-[transparent] h-[3rem] w-[100%] rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-[#A05000]"
+                            className="cursor-pointer bg-[transparent] h-[3rem] w-[100%] rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-[#00B074]"
                         >
                             <img src="/icons/add.svg" alt="" />
-                            <b className="relative text-base font-work-sans text-[#A05000] text-center">
+                            <b className="relative text-base font-work-sans text-[#00B074] text-center">
                                 Add
                             </b>
                         </button>

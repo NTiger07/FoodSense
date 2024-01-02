@@ -11,6 +11,12 @@ add items to expiry date text (something like no incoming expiry dates)
 
 
 
+-------INVENTORY-------
+Implement search for items
+no item in inventory add item
+
+
+
 -------AUTH-------
 form validation register asterisks additem login
 wrong password from api

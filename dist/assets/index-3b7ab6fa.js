@@ -31411,7 +31411,7 @@ const HN = (e) => {
           "w-[5%] ml-[.7rem] flex justify-center h-[2.2rem] items-center",
         children: k.jsx("button", {
           className:
-            "cursor-pointer bg-[transparent] h-[100%] w-[90%] rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-[#A05000]",
+            "cursor-pointer bg-[transparent] h-[100%] w-[90%] rounded-3xs flex flex-row items-center justify-center border-[1px] border-solid border-[#00B074]",
           onClick: o,
           children: k.jsx("img", { src: "/assets/add.svg", alt: "" }),
         }),
@@ -31634,7 +31634,7 @@ const KN = ["children", "className"],
                       src: "/assets/save.svg",
                     }),
                     k.jsx("div", {
-                      className: "relative font-semibold text-[#A05000]",
+                      className: "relative font-semibold text-[#00B074]",
                       children: "Save changes",
                     }),
                   ],
@@ -31751,7 +31751,7 @@ const KN = ["children", "className"],
                         src: "/assets/add.svg",
                       }),
                       k.jsx("div", {
-                        className: "relative font-semibold text-[#A05000]",
+                        className: "relative font-semibold text-[#00B074]",
                         onClick: () => i(!o),
                         children: "Add Item",
                       }),

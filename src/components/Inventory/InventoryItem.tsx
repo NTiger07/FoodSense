@@ -21,9 +21,9 @@ const InventoryItem = (props: any) => {
 
     const setBackdropStyle = useMemo(() => {
         if (item[0] % 2 == 0) {  // even number
-            return { backgroundColor: "#263238", };
+            return { backgroundColor: "#A7A49C", };
         }
-        return { backgroundColor: "#00B074", };
+        return { backgroundColor: "#90C3a5", };
     }, [item]);
 
     const [saveVisible, setSaveVisible] = useState(false)

@@ -45,7 +45,7 @@ const InventoryContainer = (props: any) => {
   })
 
   return (
-    <div className="h-[100vh] mx-[2%] mt-[2%]">
+    <div className="h-[100vh]">
       <Dialog
         open={addInventory}
         fullWidth
@@ -61,65 +61,66 @@ const InventoryContainer = (props: any) => {
         </DialogContent>
       </Dialog>
 
-      <div className="SEARCH">
-        Search and account
-      </div>
 
       <div className="w-full p-[1rem] text-[1.5rem] mb-[2%] font-semibold flex flex-col h-[30vh] bg-[url('/images/inventory.jpg')] bg-cover">
         <span className="text-[3rem] font-extrabold">INVENTORY</span>
         Manage and keep track of items in your inventory
       </div>
 
-      <div className="flex flex-col bg-[#00B074] shadow-lg rounded-lg p-[1.5rem] my-[2%]">
+      {inventoryList.length > 0 ? (<><div className="flex flex-col bg-[#00B074] shadow-lg rounded-lg p-[1.5rem] my-[2%] mx-[2%]">
         <span>{inventoryList.length} Item(s)</span>
       </div>
 
 
 
-      <div className="flex flex-row justify-between pb-[2%]">
+        <div className="flex flex-row justify-between pb-[3%] mx-[2%]">
 
-        <div className="ITEMS flex flex-col h-fit w-[65%] bg-[#00B074]">
+          <div className="ITEMS flex flex-col h-fit w-[65%] bg-[#00B074]">
 
 
-          <div className="HEADER flex items-center py-[2%] w-full text-light-black font-semibold">
+            <div className="HEADER flex items-center py-[2%] w-full text-light-black font-semibold">
 
-            <div className="NAMEID flex w-[30%]">
-              <div className="flex w-[20%] justify-center">
-                #
+              <div className="NAMEID flex w-[30%]">
+                <div className="flex w-[20%] justify-center">
+                  #
+                </div>
+
+                <div className="flex w-[80%]">
+                  Name
+                </div>
               </div>
 
-              <div className="flex w-[80%]">
-                Name
+              <div className="REST flex flex-row items-center w-[70%]">
+                <div className="w-[30%]">Units (Grams/Unit)</div>
+                <div className="w-[20%]">Expiry Date</div>
+                <div className="w-[50%]">Notes</div>
               </div>
+
+            </div>
+            <div className="flex flex-col">
+              {InventoryItems}
             </div>
 
-            <div className="REST flex flex-row items-center w-[70%]">
-              <div className="w-[30%]">Units (Grams/Unit)</div>
-              <div className="w-[20%]">Expiry Date</div>
-              <div className="w-[50%]">Notes</div>
+          </div>
+
+
+          <div className="INCOMINGEXPIRY p-[1rem] bg-[#00B074] w-[30%] h-[50vh] rounded-lg shadow-lg">
+            <span className="text-light-black font-semibold text-[1.2rem]">Incoming Expiry Dates</span>
+            <div className="flex flex-col mt-[2%]">
+              {expiryDates}
             </div>
+          </div>
+        </div></>) : (
+        <div className="mx-[2%] h-[60vh] flex items-center justify-center">
+            <span className="text-[#000] font-semibold text-[1.3rem] flex items-center justify-center">There are currently no items in your inventory. Click on Add Item to add an item.</span></div>
+          )}
 
-          </div>
-          <div className="flex flex-col">
-            {InventoryItems}
-          </div>
-          <div className="ADDSAVE bg-white rounded-lg flex py-[1rem] px-[2rem] justify-between absolute right-9 bottom-5 cursor-pointer" onClick={() => setAddInventory(!addInventory)}>
-            <a className="[text-decoration:none] w-fit flex flex-row items-center justify-start gap-[4px] text-primary-red">
-              <img className="relative w-6 h-6" alt="" src="/icons/add.svg" />
-              <div className="relative font-semibold text-[#A05000]">Add Item</div>
-            </a>
-          </div>
-        </div>
-
-
-        <div className="INCOMINGEXPIRY p-[1rem] bg-[#00B074] w-[30%] h-[50vh] rounded-lg shadow-lg">
-          <span className="text-light-black font-semibold text-[1.2rem]">Incoming Expiry Dates</span>
-          <div className="flex flex-col mt-[2%]">
-            {expiryDates}
-          </div>
-        </div>
+      <div className="ADD bg-white rounded-lg flex py-[1rem] px-[2rem] justify-between absolute right-9 bottom-2 cursor-pointer" onClick={() => setAddInventory(!addInventory)}>
+        <a className="[text-decoration:none] w-fit flex flex-row items-center justify-start gap-[4px] text-primary-red">
+          <img className="relative w-6 h-6" alt="" src="/icons/add.svg" />
+          <div className="relative font-semibold text-[#00B074]">Add Item</div>
+        </a>
       </div>
-
 
 
     </div>

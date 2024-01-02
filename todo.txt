@@ -6,7 +6,7 @@ landing page at "/" route
 add images in HTML file
 
 -------DASHBOARD-------
-
+empty text for chart
 
 
 -------INVENTORY-------

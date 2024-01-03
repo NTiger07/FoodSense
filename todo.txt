@@ -11,6 +11,8 @@ empty text for chart
 
 -------INVENTORY-------
 Implement search for items
+add ascending and descending
+date range for filter
 
 
 

@@ -109,28 +109,32 @@ const InventoryItem = (props: any) => {
                     <div className="w-[20%] flex justify-center">
                         {Number(item[0]) + 1}
                     </div>
-                    <div className="w-[80%]">
-                        {item[1].itemName}
+                    <div className="w-[80%] flex items-center flex-wrap">
+                        {item[1].itemName.length > 20 ? `${item[1].itemName.slice(0, 20)}...` : item[1].itemName}
                     </div>
                 </div>
                 <div className="flex items-center w-[70%]">
-                    <div className="flex w-[30%] gap-[5%]">
-                        {itemData.units as number < 10 ? 0 : ""}{itemData.units} ({item[1].gramsPerUnit})
-                        <span className="cursor-pointer" onClick={() => { setItemData({ ...itemData, units: itemData.units as number + 1 }); setSaveVisible(true) }}><img src="/icons/add.svg" alt="" /></span>
-                        <span className="cursor-pointer" onClick={() => { if (itemData.units as number > 1) { setItemData({ ...itemData, units: itemData.units as number - 1 }) } setSaveVisible(true) }}><img src="/icons/minus.svg" alt="" /></span>
+                    <div className="flex items-center justify-between w-[30%] gap-[5%]">
+                        <span>
+                           {itemData.units as number < 10 ? 0 : ""}{itemData.units} ({item[1].gramsPerUnit}) 
+                        </span>
+
+                        <div className="flex items-center w-[32%] mr-[5px]">
+                            <span className="cursor-pointer" onClick={() => { setItemData({ ...itemData, units: itemData.units as number + 1 }); setSaveVisible(true) }}><img src="/icons/add.svg" alt="" /></span>
+                            <span className="cursor-pointer" onClick={() => { if (itemData.units as number > 1) { setItemData({ ...itemData, units: itemData.units as number - 1 }) } setSaveVisible(true) }}><img src="/icons/minus.svg" alt="" /></span>
+                        </div>
+                        
                     </div>
                     <div className="w-[20%]">
                         {moment(item[1].expiryDate).format('DD-MM-YYYY')}
                     </div>
                     <div className="w-[50%]">
-                        {/* {item[1].notes} */}
                         <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => { setSaveVisible(true); setItemData({ ...itemData, itemNotes: e.target.value }) }} />
                     </div>
                 </div>
                 {saveVisible && (<div className="absolute right-10 flex flex-row items-center cursor-pointer" onClick={updateItem}>
                     <a className="[text-decoration:none] w-fit cursor-pointer flex flex-row items-center justify-start gap-[4px] pr-[.5rem] text-primary-red">
                         <img className="relative w-[30px]" alt="" src="/icons/save.svg" />
-                        {/* <div className="relative font-semibold text-[#A05000]">Save changes</div> */}
                     </a>
                 </div>)}
                 <div className="absolute right-2 pr-[.3rem] cursor-pointer" onClick={() => setOpen(true)}>

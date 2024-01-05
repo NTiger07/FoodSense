@@ -10,18 +10,17 @@ import axios from "axios"
 const InventoryContainer = (props: any) => {
   const { userData } = props
 
+  const [order, setOrder] = useState(1)
+
   useEffect(() => {
     getItems()
-  }, [])
+  }, [order])
 
-  const [order, setOrder] = useState(1)
   const [inventoryList, setInventoryList] = useState([])
   const [addInventory, setAddInventory] = useState(false)
 
   const toggleOrder = () => {
-    order == 1 ? setOrder(prev => -1) : setOrder(prev => 1)
-    
-    getItems()
+    order == 1 ? setOrder(prev => prev - 2) : setOrder(prev => prev + 2)
   }
 
   const sortParam = {

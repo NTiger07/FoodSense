@@ -4,6 +4,8 @@ update readme
 heading text for every section
 landing page at "/" route
 add images in HTML file
+CHARTS SHOULD HAVE A DIFFERENT BACKGROUND MAYBE LIGHT GREEN OR BLACK
+
 
 -------DASHBOARD-------
 empty text for chart
@@ -12,14 +14,13 @@ empty text for chart
 -------INVENTORY-------
 Implement search for items backend
 date range for filter
-edit icon to implement notes editing and seamless sorting
-walkaround for toggle state kini
+edit icon to implement notes editing
 
 
 
 -------AUTH-------
 form validation register asterisks additem login
-wrong password from api
+determine wrong password from api
 
 
 

@@ -10,9 +10,10 @@ empty text for chart
 
 
 -------INVENTORY-------
-Implement search for items
-add ascending and descending
+Implement search for items backend
 date range for filter
+edit icon to implement notes editing and seamless sorting
+walkaround for toggle state kini
 
 
 

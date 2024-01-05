@@ -53,7 +53,7 @@ const DashboardContainer = (props: any) => {
         </div>
 
         <div className="h-fit w-full mb-[2rem]">
-          <span className="text-[1.5rem] mb-[1rem]">Here are some recipes for you to try out...</span>
+          <span className="text-[1.5rem] mb-[1rem] text-[#000]">Here are some recipes for you to try out...</span>
           <Recipes />
         </div>
       </div>

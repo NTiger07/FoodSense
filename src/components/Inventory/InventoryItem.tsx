@@ -17,6 +17,7 @@ const InventoryItem = (props: any) => {
     const { item, getItems } = props
 
     const [open, setOpen] = useState(false);
+    const [editMode, setEditMode] = useState(false)
 
 
     const setBackdropStyle = useMemo(() => {
@@ -116,20 +117,24 @@ const InventoryItem = (props: any) => {
                 <div className="flex items-center w-[70%]">
                     <div className="flex items-center justify-between w-[30%] gap-[5%]">
                         <span>
-                           {itemData.units as number < 10 ? 0 : ""}{itemData.units} ({item[1].gramsPerUnit}) 
+                            {itemData.units as number < 10 ? 0 : ""}{itemData.units} ({item[1].gramsPerUnit})
                         </span>
 
                         <div className="flex items-center w-[32%] mr-[5px]">
                             <span className="cursor-pointer" onClick={() => { setItemData({ ...itemData, units: itemData.units as number + 1 }); setSaveVisible(true) }}><img src="/icons/add.svg" alt="" /></span>
                             <span className="cursor-pointer" onClick={() => { if (itemData.units as number > 1) { setItemData({ ...itemData, units: itemData.units as number - 1 }) } setSaveVisible(true) }}><img src="/icons/minus.svg" alt="" /></span>
                         </div>
-                        
+
                     </div>
                     <div className="w-[20%]">
                         {moment(item[1].expiryDate).format('DD-MM-YYYY')}
                     </div>
                     <div className="w-[50%]">
-                        <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => { setSaveVisible(true); setItemData({ ...itemData, itemNotes: e.target.value }) }} />
+                        {/* {editMode ? (
+                            <input type="text" defaultValue={item[1].itemNotes} className="bg-transparent outline-none border-none cursor-pointer" onChange={(e) => { setSaveVisible(true); setItemData({ ...itemData, itemNotes: e.target.value }) }} />
+                        ) :
+                            <span onClick={() => setEditMode(true)}>{item[1].itemNotes}</span>} */}
+                        <span>{item[1].itemNotes}</span>
                     </div>
                 </div>
                 {saveVisible && (<div className="absolute right-10 flex flex-row items-center cursor-pointer" onClick={updateItem}>

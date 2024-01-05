@@ -14,15 +14,26 @@ const InventoryContainer = (props: any) => {
     getItems()
   }, [])
 
+  const [order, setOrder] = useState(1)
   const [inventoryList, setInventoryList] = useState([])
   const [addInventory, setAddInventory] = useState(false)
+
+  const toggleOrder = () => {
+    order == 1 ? setOrder(prev => -1) : setOrder(prev => 1)
+    
+    getItems()
+  }
+
+  const sortParam = {
+    order: order
+  }
 
 
 
 
   const getItems = () => {
     axios
-      .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData?.id}`)
+      .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData?.id}`, { params: sortParam })
       .then((res) => {
         setInventoryList(res.data)
       })
@@ -38,11 +49,12 @@ const InventoryContainer = (props: any) => {
       return <ExpiryItem item={item} getItems={getItems} />;
     });
 
-  const InventoryItems = Object.entries(inventoryList).map((item) => {
-    return (
-      <InventoryItem item={item} getItems={getItems} />
-    )
-  })
+  const InventoryItems = Object.entries(inventoryList)
+    .map((item) => {
+      return (
+        <InventoryItem item={item} getItems={getItems} />
+      )
+    })
 
   return (
     <div className="h-[100vh]">
@@ -80,7 +92,7 @@ const InventoryContainer = (props: any) => {
             <div className="SEARCH mx-[1%] text-[#000]">
               <div className="flex h-[1rem] flex-row items-center justify-between my-[5%]">
                 <div className="flex h-[100%] flex-row items-center">
-                  <div className="h-[2.5rem] cursor-pointer rounded-6xs mr-[5%] px-[5%] bg-whites-plain box-border overflow-hidden flex flex-row items-center justify-center border border-greys-etherium">
+                  <div className="h-[2.5rem] cursor-pointer rounded-6xs mr-[5%] px-[5%] bg-whites-plain box-border overflow-hidden flex flex-row items-center justify-center border border-greys-etherium" onClick={toggleOrder}>
                     <img className="w-[.9rem]" alt="" src="/icons/arrows-exchange-alt-v.svg" />
                   </div>
 
@@ -159,6 +171,7 @@ const InventoryContainer = (props: any) => {
               </div>
 
             </div>
+
             <div className="flex flex-col">
               {InventoryItems}
             </div>

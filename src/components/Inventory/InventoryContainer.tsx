@@ -11,10 +11,11 @@ const InventoryContainer = (props: any) => {
   const { userData } = props
 
   const [order, setOrder] = useState(1)
+  const [query, setQuery] = useState("")
 
   useEffect(() => {
     getItems()
-  }, [order])
+  }, [order, query])
 
   const [inventoryList, setInventoryList] = useState([])
   const [addInventory, setAddInventory] = useState(false)
@@ -23,8 +24,9 @@ const InventoryContainer = (props: any) => {
     order == 1 ? setOrder(prev => prev - 2) : setOrder(prev => prev + 2)
   }
 
-  const sortParam = {
-    order: order
+  const params = {
+    order: order,
+    query: query
   }
 
 
@@ -32,7 +34,7 @@ const InventoryContainer = (props: any) => {
 
   const getItems = () => {
     axios
-      .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData?.id}`, { params: sortParam })
+      .get(`${import.meta.env.VITE_LOCAL_URL}items/all/${userData?.id}`, { params: params })
       .then((res) => {
         setInventoryList(res.data)
       })
@@ -100,6 +102,8 @@ const InventoryContainer = (props: any) => {
                     <input
                       className="pl-[20px] w-[100%] text-[1.1rem] outline-none appearance-none"
                       type="search"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
                       placeholder="Search"
                     />
                   </div>

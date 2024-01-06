@@ -12,7 +12,6 @@ empty text for chart
 
 
 -------INVENTORY-------
-Implement search for items backend
 date range for filter
 edit icon to implement notes editing
 
